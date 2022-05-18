@@ -13,7 +13,7 @@
       <ui-menu-item title="QQ群" icon="cicon-qq text-pink" isAction data-value="465737893" bindtap="tapCopy">
         <text slot="action">465737893 <text class="_icon-copy-o text-blue"></text></text>
       </ui-menu-item>
-      <ui-menu-item title="开源" icon="cicon-github text-orange" isAction data-value="https://github.com/XiaokangLei/MiniInterview.git" bindtap="tapCopy">
+      <ui-menu-item title="开源" icon="cicon-github text-orange" isAction data-value="https://github.com/XiaokangLei/MiniWorkRelease.git" bindtap="tapCopy">
         <text slot="action">复制地址 <text class="_icon-copy-o text-blue"></text></text>
       </ui-menu-item>
     </ui-menu>
