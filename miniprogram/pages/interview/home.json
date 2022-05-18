@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "app-nav-li": "/components/app-nav-li/app-nav-li"
+  }
+}

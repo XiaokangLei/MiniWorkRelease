@@ -1,0 +1,49 @@
+<!--pages/schedule/datail/home.wxml-->
+<ui-sys doc title="{{title}}">
+  <view class="ui-container">
+    <ui-title title="{{title}}" titleColor="text-blue" tpl="center-column" hasDot />
+    <view class="text-center">{{time||''}}</view>
+    <view class="mr-1 mt-2 text-right">
+      <block wx:if="{{info['collect']}}">
+        <view class="item-time text-right mr-3 cicon-star-o ml-4">{{info["collect"]||0}}</view>
+      </block>
+      <block wx:if="{{info['statr']}}">
+        <view class="item-time text-right mr-3 cicon-favorite-o">{{info["statr"]||0}}</view>
+      </block>
+    </view>
+  </view>
+
+  <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
+    <ui-loading color isSlot>
+      <text class="text-lg text-blue">Loading..</text>
+    </ui-loading>
+  </view>
+
+  <view class="my-3">
+    <towxml nodes="{{html}}" />
+  </view>
+
+  <view class="flex-center" wx:if="{{showstar=='true'}}">
+    <!-- 收藏/取消 -->
+    <view class="px-6">
+      <view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
+        <text class="cicon-star text-orange text-sl" />
+      </view>
+      <view bindtap="statr_sc" data-id="collect" wx:else>
+        <text class="cicon-star-o text-grey text-sl" />
+      </view>
+    </view>
+
+    <!-- 点赞/取消 -->
+    <view class="px-6">
+      <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
+        <text class="cicon-favorite text-orange text-sl" />
+      </view>
+      <view style="margin-right: -10rpx;" bindtap="statr_sc" data-id="statr" wx:else>
+        <text class="cicon-favorite-o text-grey text-sl" />
+      </view>
+    </view>
+  </view>
+
+
+</ui-sys>

@@ -1,0 +1,16 @@
+<!--pages/document/markdown/home.wxml-->
+<ui-sys doc title="{{title}}">
+  <view class="ui-container">
+
+    <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
+      <ui-loading color isSlot>
+        <text class="text-lg text-blue">Loading..</text>
+      </ui-loading>
+    </view>
+
+    <view class="mt-3">
+      <towxml nodes="{{markdown}}" />
+    </view>
+
+  </view>
+</ui-sys>

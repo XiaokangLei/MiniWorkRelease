@@ -1,0 +1,5 @@
+<ui-sys loading="{{false}}" title="设置">
+    <view class="text-lg m-3">
+        <ui-change-theme ui="mt-0 radius-l" />
+    </view>
+</ui-sys>

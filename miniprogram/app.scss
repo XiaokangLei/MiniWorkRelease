@@ -1,0 +1,84 @@
+@import './mp-cu/colorUI/scss/ui';
+@import './mp-cu/icon/doc';
+
+.page-card-box {
+  position: relative;
+  margin: 5rpx 24rpx 60rpx;
+  .page-card-view {
+      position: relative;
+      padding: 20rpx 30rpx;
+      border-radius: 24rpx;
+      display: flex;
+      z-index: 2;
+      &:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba( 255, 255, 255, 0.1 );
+          backdrop-filter: blur( 20px );
+          -webkit-backdrop-filter: blur( 20px );
+          border-radius: 24rpx;
+          border: 1px solid rgba( 255, 255, 255, 0.18 );
+          z-index: -1;
+      }
+      .left-view {
+          position: relative;
+          height: 202rpx;
+          padding: 10rpx 0;
+          flex: 1;
+      }
+      .right-view {
+          position: relative;
+          height: 202rpx;
+          width: 180rpx;
+          text-align: center;
+          margin-left: 90rpx;
+          image {
+              position: absolute;
+              width: 260rpx;
+              height: 260rpx;
+              top: -85rpx;
+              left: -40rpx;
+              filter: drop-shadow(var(--ui-Shadow-lg));
+              -webkit-filter: drop-shadow(var(--ui-Shadow-lg));
+          }
+          .text {
+              position: absolute;
+              bottom: 8rpx;
+              width: 100%;
+          }
+          &:before {
+              position: absolute;
+              content: "";
+              height: 190rpx;
+              width: 2rpx;
+              left: -40rpx;
+              top: 33rpx;
+              background-image: linear-gradient(0deg, #ffffffbf, #0166eb00);
+          }
+      }
+  }
+  .page-card-sub {
+      position: relative;
+      margin: 0 40rpx;
+      padding: 18rpx 30rpx;
+      border-radius: 0 0 30rpx 30rpx;
+      z-index: 1;
+      text {
+          z-index: 3;
+      }
+  }
+}
+
+
+
+.tn-bg{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+}

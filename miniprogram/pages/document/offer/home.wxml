@@ -1,0 +1,35 @@
+<!--pages/document/offer/home.wxml-->
+<ui-sys doc title="{{title}}">
+
+  <view class="ui-container">
+    <view wx:if="{{getsuccess}}">
+
+      <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
+        <ui-loading color isSlot>
+          <text class="text-lg text-blue">Waiting..</text>
+        </ui-loading>
+      </view>
+
+      <block wx:if="{{!nodata && !loading}}">
+        <ui-title title="简介" depth="2" isIcon />
+        <view class="paragraph">{{introduction}}</view>
+
+        <block wx:for="{{offer}}" wx:for-item="off" wx:key="index">
+
+          <ui-title title="{{off.title}}" depth="2" isIcon />
+          <ui-menu ui="mt-3 radius-l">
+            <block wx:for="{{off.content}}" wx:for-item="con" wx:key="index">
+              <ui-menu-item arrow title="{{con.title}}" data-mk='{{con.title}}' bindtap="toMarkdown">
+              </ui-menu-item>
+            </block>
+          </ui-menu>
+
+        </block>
+
+        <ui-title title="参考资料" depth="2" isIcon />
+        <view class="paragraph text-sm" style="white-space: pre-wrap;">{{reference}}</view>
+
+      </block>
+    </view>
+  </view>
+</ui-sys>

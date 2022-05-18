@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ui-card": "/mp-cu/colorUI/components/ui-card/ui-card"
+  }
+}

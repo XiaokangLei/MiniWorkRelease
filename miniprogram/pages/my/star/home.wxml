@@ -1,0 +1,79 @@
+<!--pages/my/star/home.wxml-->
+<ui-sys doc title="{{mytitle}}">
+
+  <!-- 校招日程列表 -->
+  <view class="ui-container">
+
+    <ui-tab tab="{{['校招倒计时', '题目&其他']}}" value="{{tabValue}}" align="flex-center" bind:change="tabNavChange" />
+
+    <view class="page-card-box-new mt-3" wx:for="{{xw_list}}" wx:key="item">
+      <view class="ui-BG page-card-view" data-id="{{item._id}}" data-info="{{item}}" data-html="{{item.html}}" data-time="{{item.add_time}}" data-title="{{item.tille}}" bindtap="tapToUrl">
+        <!-- 左半部分 -->
+        <view class="left-view">
+          <view class="text-bold text-lg">{{item.tille}}
+            <ui-tag class="text-sm" bg="bg-mauve-light" wx:if="{{item.forward}}" ui="sm" info="提前批" />
+            <ui-tag class="text-sm" bg="bg-orange-light" wx:elif="{{item.fall}}" ui="sm" info="秋招" />
+            <ui-tag class="text-sm" bg="bg-green-light" wx:elif="{{item.spring}}" ui="sm" info="春招" />
+          </view>
+          <view class="text-sm mt-3 text-linecut">{{item.mec}}</view>
+          <view class="text text-sm name pb-3">
+            <view class="flex-bar mr-2">
+              <view class="item-time text-right mr-3 _icon-waiting-o"> {{m1.format(item.add_time)}}</view>
+              <view class="item-time text-right mr-3 cicon-star-o ml-4">{{item.collect||0}}
+                <text class="cicon-favorite-o mr-1 ml-3">{{item.statr||0}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 右半部分 -->
+        <view class="right-view">
+          <image src="{{item.img}}" mode="aspectFill" />
+          <view>
+            <view class="text text-green text-bold text-l" wx:if="{{m2.format(item.end)}}">
+              <ui-tag class="text-lg" bg="bg-green-gradient" ui="sm" info="{{m2.format(item.end)}} 天截止" />
+            </view>
+            <view class="text text-red text-bold text-l" wx:else>
+              <ui-tag class="text-lg" bg="bg-orange-gradient" ui="sm" info="已 截 止" />
+            </view>
+          </view>
+        </view>
+        <!-- 右半部分END -->
+      </view>
+    </view>
+    <!-- </block> -->
+
+  </view>
+
+</ui-sys>
+
+
+<wxs module="m1">
+  function format(ts) {
+    var d = getDate(ts)
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+  }
+  module.exports.format = format
+</wxs>
+
+<wxs module="m2">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    var theTime = d - myDate
+    var minute = 0; // 分
+    var hour = 0;//小时
+    var day = 0
+    if (theTime > 60) {
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24);
+      }
+    }
+    return day
+  }
+  module.exports.format = format
+</wxs>

@@ -1,0 +1,47 @@
+<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+  <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}" placeholder="{{false}}">
+    <view class="flex-bar p-3" wx:if="{{scrollTop > sys_navBar}}">
+      <image src="/static/tab_icon/test_cur.png" mode="aspectFill" style="width: 60rpx;height: 54rpx;" />
+      <text class="text-lg text-bold ml-2">校招刷题</text>
+    </view>
+    <view class="p-3 flex-bar flex-sub" wx:if="{{scrollTop > sys_navBar}}">
+      <view url="/pages/search/search" class="flex-sub flex-bar">
+        <view class="p-2 bg-blur-1 w-100 round flex-center" style="height: 28px;">
+          <text class="cicon-search-line mx-2"></text>
+          <view class="text-c text-sm">搜索关键词查找题目</view>
+        </view>
+      </view>
+    </view>
+    <view class="flex-bar">
+      <view style="{{'width:'+ (sys_capsule.width + 10)+'px; height:'+sys_capsule.height+'px'}}" />
+    </view>
+  </ui-navbar>
+
+  <!-- 校招日程TOP信息 -->
+  <view class="page-card-box" style="margin-top: {{sys_navBar+0.1*sys_capsule.height}}px;">
+    <view class="bg-pink-gradient shadow-blur page-card-view">
+      <view class="left-view">
+        <view class="text-bold text-xl">笔试面试高频题</view>
+        <view class="mt-3">技术面试基础知识、Leetcode、计算机操作系统、计算机网络、系统设计等</view>
+      </view>
+      <view class="right-view">
+        <image src="/static/tab_icon/test_cur.png" mode="aspectFill" />
+        <view class="text-xl text">小贝刷题</view>
+      </view>
+    </view>
+  </view>
+  <!-- 题目列表 -->
+  <view class="ui-container">
+    <block wx:for="{{navData}}" wx:for-item="nav" wx:key="index">
+      <ui-title title="{{nav.title}}" depth="2" ui="ml-3" hasLine/>
+      <view class="ui-grid ui-cols-2" style="margin-top: -20rpx;">
+        <block wx:for="{{nav.sub}}" wx:for-index="sub_index" wx:key="sub_index">
+          <view class="ui-item p-3">
+            <app-nav-li data="{{item}}" />
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+
+</ui-sys>

@@ -1,0 +1,48 @@
+<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+  <view class="ui-container" style="margin-top: {{sys_navBar}}px;">
+    <view class="flex-bar my-4 ml-2" data-url="/pages/demo/login/login" bindtap="tapToUrl">
+      <ui-avatar ui="xxl round" src="/static/logo.png" />
+      <view class="flex-sub pl-3">
+        <view class="text-xl">登录,享受更多服务。</view>
+      </view>
+    </view>
+    <view class="mt-5">
+      <view class="ui-grid ui-cols-3 ui-cols-lg-6 p-3 radius-l ui-BG">
+        <view class="ui-item mt-2">
+          <view class="text-center">
+            <navigator target="miniProgram" open-type="navigate" app-id="wxebadf544ddae62cb" path="pages/survey/index?sid=9685739&hash=6d00" version="release">
+              <view>
+                <view class="cicon-event-list text-pink text-center text-xxxl"></view>
+                <view class="text-center">我要内推</view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+        <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=star" bindtap="tapToUrl">
+          <view class="text-center text-xxxl">
+            <view class="cicon-favorite text-red text-center"></view>
+          </view>
+          <view class="text-center">我的点赞</view>
+        </view>
+        <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=collect" data-kind="collect" bindtap="tapToUrl">
+          <view class="text-center text-xxxl">
+            <view class="cicon-star text-orange text-center"></view>
+          </view>
+          <view class="text-center">我的收藏</view>
+        </view>
+      </view>
+    </view>
+    <ui-menu ui="mt-3 radius-lg text-lg">
+      <ui-menu-item arrow title="开源/待办" icon="cicon-github text-orange" data-url="/pages/my/github/home" bindtap="tapToUrl" />
+      <ui-menu-item arrow title="联系/咨询" icon="cicon-chat-smiles text-green" data-url="/pages/my/chat/home" bindtap="tapToUrl" />
+      <ui-menu-item arrow title="资源下载" icon="cicon-cloud-download text-blue" data-url="/pages/my/resource/home" bindtap="tapToUrl" />
+      <ui-menu-item arrow title="打赏支持" icon="cicon-redpacket text-red" bindtap="showQrcode" />
+    </ui-menu>
+    <ui-menu ui="mt-3 radius-lg  text-lg">
+      <ui-menu-item arrow title="历史版本" icon="cicon-shengji text-mauve" data-url="/pages/my/history/home" bindtap="tapToUrl" />
+      <ui-menu-item arrow title="设置" icon="cicon-set text-cyan" data-url="/pages/my/set/home" bindtap="tapToUrl" />
+      <ui-menu-item arrow title="关于" icon="cicon-info text-yellow" data-url="/pages/my/about/home" bindtap="tapToUrl" />
+    </ui-menu>
+
+  </view>
+</ui-sys>

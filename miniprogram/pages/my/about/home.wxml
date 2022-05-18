@@ -1,0 +1,46 @@
+<!--pages/my/about/home.wxml-->
+<ui-sys loading="{{false}}" doc title="关于">
+  <view class="ui-container">
+    <view class="text-center mt-2">
+      <ui-avatar ui="round xl" src="/static/logo.png" />
+      <view class="text-bold text-xl" style="margin-top: 32rpx;">
+        <text>小贝校招</text>
+      </view>
+      <view class="mt-2">
+        <text>V {{version}}</text>
+      </view>
+    </view>
+
+    <view class="ui-BG radius-lg p-3 my-3 mx-1" data-value="text-justify">
+      <view class="text-justify text-lg" style="line-height: 56rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;小贝校招小程序是个人开发的一款开源小程序，主要提供常见的面试题、算法题、招聘信息、内推信息等资源的小程序。</text>
+      </view>
+      <view class="text-justify text-lg" style="line-height: 56rpx;margin-top: 20rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;小程序内校招日程为作者闲暇时间整理，不定时更新，想第一时间获取校招消息，可关注相关公司校招招聘公众。</text>
+      </view>
+      <view class="text-justify text-lg" style="line-height: 56rpx;margin-top: 20rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;小程序内相关信息大部分来源于各大网站，作者对其进行整理，开源不易，如果小程序有帮助到您，请帮忙推广，感激不尽。</text>
+      </view>
+      <view class="text-justify text-lg" style="line-height: 56rpx;margin-top: 20rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;如果您在使用小程序过程中遇到任何问题，请与我联系：lxk201808@163.com。</text>
+      </view>
+    </view>
+
+    <view class="ui-BG radius-lg p-3 my-3 mx-1 mt-5" data-value="text-justify">
+      <view class="text-justify text-bold text-xl text-center my-2" style="line-height: 36rpx;">
+        致谢
+      </view>
+      <view class="text-justify text-l mt-2" style="line-height: 36rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;小程序UI：<text class="text-blue">MP-CU V3.x</text></text>
+      </view>
+      <view class="text-justify text-l mt-2" style="line-height: 36rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;Markdown插件：<text class="text-blue">Towxml</text></text>
+      </view>
+      <view class="text-justify text-l mt-2" style="line-height: 36rpx;">
+        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;部分题目：<text class="text-blue">www.cyc2018.xyz</text></text>
+      </view>
+
+    </view>
+
+  </view>
+</ui-sys>

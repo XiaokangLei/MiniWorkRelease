@@ -1,0 +1,34 @@
+<!--pages/home/company/home.wxml-->
+<ui-sys loading="{{true}}" doc title="面试真题">
+    <view class="page-card-box pt-3">
+        <view class="bg-mauve-gradient shadow-blur page-card-view">
+            <view class="left-view">
+                <view class="text-bold text-lg">公司面试真题</view>
+                <view class="text-sm mt-3">在这里可以看到公司校招、社招公司面试题目。</view>
+            </view>
+            <view class="right-view">
+                <image src="/static/tab_icon/custom_cur.png" mode="aspectFill" />
+                <view class="text-sm text">Interview</view>
+            </view>
+        </view>
+    </view>
+    <view class="ui-container">
+        <ui-title title="公司面试真题" titleColor="text-blue" tpl="center-column" hasDot />
+        <view class="flex-center" style="padding-top: 48%" wx:if="{{loading}}">
+            <ui-loading color isSlot>
+                <text class="text-lg text-blue">Waiting..</text>
+            </ui-loading>
+        </view>
+        <view class="ui-grid ui-cols-1 ui-cols-sm-2 ui-cols-md-2 ui-cols-lg-2 ui-cols-xl-4 ui-cols-xxl-8 radius" wx:if="{{company.length > 0}}">
+            <view class="p-3 ui-item" wx:for="{{company}}" wx:key="index">
+                <view class="{{'bg-' + item.color + '-light'}} radius-l p-4 item shadow" data-value="{{'bg-' + item.color + '-thin'}}" data-url="{{item.url}}" bindtap="tapToUrl">
+                    <view class="text-xl pb-3">{{item.title}}</view>
+                    <view class="text-sm text-right">
+                        <text class="text-right text-italic">{{item.english}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</ui-sys>

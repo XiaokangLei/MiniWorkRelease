@@ -1,0 +1,100 @@
+/* pages/my/star/home.wxss */
+.page-card-box-new {
+  position: relative;
+  margin: 5rpx 10rpx 30rpx;
+
+  .page-card-view {
+    position: relative;
+    padding: 6rpx 16rpx 0rpx 30rpx;
+    border-radius: 24rpx;
+    display: flex;
+    z-index: 2;
+
+    .left-view {
+      position: relative;
+      height: 200rpx;
+      padding: 10rpx 0;
+      flex: 1;
+
+      .text {
+        position: absolute;
+        bottom: 0rpx;
+        width: 100%;
+      }
+    }
+
+    .right-view {
+      position: relative;
+      height: 200rpx;
+      width: 180rpx;
+      text-align: center;
+      margin-left: 36rpx;
+
+      image {
+        position: absolute;
+        width: 142rpx;
+        height: 136rpx;
+        top: -16rpx;
+        left: 10rpx;
+        border-radius: 36rpx;
+        filter: drop-shadow(var(--ui-Shadow-lg));
+        -webkit-filter: drop-shadow(var(--ui-Shadow-lg));
+      }
+
+      .text {
+        position: absolute;
+        bottom: 12rpx;
+        width: 100%;
+        left: -12rpx;
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 190rpx;
+        width: 2rpx;
+        left: -30rpx;
+        top: 10rpx;
+        background-image: linear-gradient(0deg, #a8a8a8bf, #0166eb00);
+      }
+    }
+  }
+
+  .page-card-sub {
+    position: relative;
+    margin: 0 40rpx;
+    padding: 18rpx 30rpx;
+    border-radius: 0 0 30rpx 30rpx;
+    z-index: 1;
+
+    text {
+      z-index: 3;
+    }
+  }
+}
+
+.ui-container {
+  position: relative;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+
+  .test-doc-card {
+    position: relative;
+    border-radius: 24rpx;
+    padding: 30rpx;
+    height: 240rpx;
+
+    .content {
+      position: relative;
+      height: 100%;
+      z-index: 2;
+
+      .name {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+}

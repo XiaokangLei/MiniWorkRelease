@@ -1,0 +1,60 @@
+<!--pages/referral/detail/home.wxml-->
+<ui-sys doc title="内推详情">
+
+  <view class="ui-container">
+    <view class="flex-bar mt-3 text-left">
+      <view class="text-cut text-xxl text-bold">
+        <ui-avatar ui="radius sl" src="{{logo}}" />{{name}}
+      </view>
+      <!-- <view class="flex-bar" bindtap="bingMpTap">
+        <text class="cicon-qr-code-line text-sl text-yellow"></text>
+      </view> -->
+    </view>
+    
+    <block wx:for="{{info}}" wx:key="index">
+      <view class="p-3 my-3 ui-BG radius">
+        <view style="width: 650rpx;" class="py-3 text-cut">
+          <text class="_icon-title text-blue"></text>
+          <text class="text-bold">部门: </text>
+          <text> {{item['部门'] || '-'}}</text>
+        </view>
+        <view style="width: 650rpx;" class="py-3 border-top text-cut">
+          <text class="_icon-title text-blue"></text>
+          <text class="text-bold">岗位: </text>
+          <text>{{(item['岗位']) || '-'}}, {{(cat.area) || '-'}}</text>
+        </view>
+
+        <view style="width: 650rpx;" class="py-3 border-top text-cut" data-value="{{cat.relation || '-'}}" bindtap="bgCopy">
+          <text class="_icon-title text-blue"></text>
+          <text class="text-bold">岗位链接: </text>
+          <text>{{item['岗位链接'] || '-'}}</text>
+          <text class="_icon-copy-o text-blue"></text>
+        </view>
+        <view style="width: 650rpx;" class="py-3 border-top text-cut" data-value="{{item['内推邮箱'] || ''}}" bindtap="bgCopy">
+          <text class="_icon-title text-blue"></text>
+          <text class="text-bold">内推邮箱: </text>
+          <text>{{item['内推邮箱'] || ''}}</text>
+          <text class="_icon-copy-o text-blue"></text>
+        </view>
+        <view class="py-3 border-top">
+          <text class="_icon-title text-blue"></text><text class="text-bold">内推时间: </text><text>{{item['内推时间'] || '-'}}</text>
+        </view>
+        <view class="py-3 border-top">
+          <text class="_icon-title text-blue"></text><text class="text-bold">简介: \n</text>
+          <view class="p-3">
+            <text>{{item['简介'] || '暂无简介'}}</text>
+          </view>
+
+        </view>
+      </view>
+    </block>
+
+    <!-- 留言板 -->
+    <!-- <view class="bg-blue" id="comment-btn" bindtap="toComment">
+      <text>留言板</text>
+      <van-icon name="play" size="20px" color="yellow" />
+    </view> -->
+
+  </view>
+
+</ui-sys>

@@ -1,0 +1,59 @@
+<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+  <!-- 向下滑动显示顶部搜索 -->
+  <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}" placeholder="{{false}}">
+    <view class="flex-bar p-3" wx:if="{{scrollTop > sys_navBar}}">
+      <image src="/static/tab_icon/tpl_cur.png" mode="aspectFill" style="width: 60rpx;height: 54rpx;" />
+      <text class="text-lg text-bold ml-2">内部推荐</text>
+    </view>
+    <view class="p-3 flex-bar flex-sub" wx:if="{{scrollTop > sys_navBar}}">
+      <view url="/pages/search/search" class="flex-sub flex-bar">
+        <view class="p-2 bg-blur-1 w-100 round flex-center" style="height: 28px;">
+          <text class="cicon-search-line mx-2" />
+          <view class="text-c text-sm">搜索关键词查找内推</view>
+        </view>
+      </view>
+    </view>
+    <!-- 高度调整 -->
+    <view class="flex-bar">
+      <view style="{{'width:'+ (sys_capsule.width + 10)+'px; height:'+sys_capsule.height+'px'}}" />
+    </view>
+  </ui-navbar>
+  <!-- 内推TOP信息 -->
+  <view class="page-card-box" style="margin-top: {{sys_navBar+0.1*sys_capsule.height}}px;">
+    <view class="bg-blue-gradient shadow-blur page-card-view">
+      <view class="left-view">
+        <view class="text-bold text-xl">校招/社招内推</view>
+        <view class="mt-3">虚席以待，未来可期。拿offer，快人一步，你推我赏，这个月的奶茶我包了。</view>
+      </view>
+      <view class="right-view">
+        <image src="/static/tab_icon/tpl_cur.png" mode="aspectFill" />
+        <view class="text-xl text">小贝内推</view>
+      </view>
+    </view>
+  </view>
+  <!-- 内推信息 -->
+  <view class="ui-container">
+    <ui-title title="热门内推" depth="2" isIcon ui="ml-3" />
+    <view class="ui-cards goods col-goods">
+      <view class="ui-item" wx:for="{{list}}" wx:key="index" data-info="{{item.each}}" data-logo="{{item.logo}}" data-company="{{item.name}}" data-comment="{{item.comment}}" bindtap="toProductDetail">
+        <image src="{{item.cover}}" class="image" mode="aspectFill" />
+        <view class="content">
+          <view class="flex-bar">
+            <view class="text-cut text-xl text-bold">{{ item.name }}</view>
+            <view class="flex-bar ui-TC-3">
+              <view class="flex-bar mx-2">
+                <text class="cicon-favorite mx-2" />
+                <text>{{ item.like }}</text>
+              </view>
+              <view class="flex-bar mx-3">
+                <text class="cicon-comment mx-2" />
+                <text>{{ item.comment }}</text>
+              </view>
+            </view>
+          </view>
+          <view class="ui-TC-3 mt-2 text-linecut-2">{{ item.desc }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</ui-sys>

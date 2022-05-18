@@ -1,0 +1,10 @@
+<!--pages/my/resource/resource.wxml-->
+<ui-sys loading="{{false}}" doc title="资源下载">
+
+  <view class="ui-container">
+
+    <ui-title title="敬请期待" titleColor="text-blue" tpl="center-column" hasDot />
+
+  </view>
+
+</ui-sys>

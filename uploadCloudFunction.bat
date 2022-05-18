@@ -1,0 +1,1 @@
+"D:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" cloud functions deploy --e test-we0f3 --n quickstartFunctions --r --project "E:\MiniGithub\FinalMiniWork" --report_first && "D:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" cloud functions deploy --e product-2gy06ytxb826f95d --n quickstartFunctions --r --project "E:\MiniGithub\FinalMiniWork" --report

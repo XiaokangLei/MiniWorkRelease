@@ -1,0 +1,28 @@
+<!--pages/my/github/github.wxml-->
+<ui-sys loading="{{false}}" doc title="开源/待办">
+
+  <ui-menu ui="mt-5 radius-l text-lg mx-3">
+    <ui-menu-item title="GitHub开源" icon="cicon-github" isAction data-value="https://github.com/XiaokangLei/MiniInterview.git" bindtap="tapCopy">
+      <text slot="action">复制地址 <text class="_icon-copy-o text-blue"></text></text>
+    </ui-menu-item>
+    <ui-menu-item title="Gitee开源" icon="cicon-github" isAction data-value="https://github.com/XiaokangLei/MiniInterview.git" bindtap="tapCopy">
+      <text slot="action">复制地址 <text class="_icon-copy-o text-blue"></text></text>
+    </ui-menu-item>
+  </ui-menu>
+
+  <view class="ui-container">
+    <ui-title title="开源计划" depth="2" isIcon ui="mx-2" />
+    <view class="px-4">
+      <ui-checkbox value="{{true}}" unbg="borders border-blue" bg="bg-blue-gradient" bind:change="style2Change">
+        计划开源时间：2022年5月25日前
+      </ui-checkbox>
+    </view>
+
+    <ui-title title="待办" depth="2" isIcon ui="mx-2" />
+    <view class="px-4">
+      <ui-steps cur="{{basics}}" info="{{basicsList}}" column />
+      <ui-steps cur="{{num}}" info="{{numList}}" number column />
+    </view>
+  </view>
+
+</ui-sys>

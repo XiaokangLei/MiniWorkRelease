@@ -1,0 +1,17 @@
+<!--pages/home/resume/home.wxml-->
+<ui-sys doc title="简历模板">
+
+  <view class="ui-BG radius p-3 m-4 shadow">
+    <view class="_icon-info text-yellow">点击图片可预览。简历预览下载由微信文件助手提供服务，如需要更好的浏览体验请下载相应阅读器</view>
+  </view>
+
+  <view class="p-3 ui-grid ui-cols-3">
+    <view class="p-3 ui-item" wx:for="{{navData}}" wx:key="index">
+      <ui-img preview ui="radius border" src="{{item.img}}" urls="{{list_img}}" current="{{index}}" />
+      <view class="text-center pt-2">
+        <button class="ui-btn bg-blue-gradient sm" data-url="{{item.url}}" data-type="docx" catchtap="downloadFile">下载</button>
+      </view>
+    </view>
+  </view>
+
+</ui-sys>
