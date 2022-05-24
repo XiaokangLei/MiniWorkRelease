@@ -1,13 +1,35 @@
 <ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
   <view class="ui-container" style="margin-top: {{sys_navBar}}px;">
-    <view class="flex-bar my-4 ml-2" data-url="/pages/demo/login/login" bindtap="tapToUrl">
-      <ui-avatar ui="xxl round" src="/static/logo.png" />
+    <view class="flex-bar my-4 ml-2" bindtap="show">
+      <view data-url="/pages/demo/login/login" bindtap="tapToUrl">
+        <ui-avatar ui="xxl round" src="/static/logo.png" />
+      </view>
+
       <view class="flex-sub pl-3">
-        <view class="text-xl">登录,享受更多服务。</view>
+        <view class="text-xl ml-2" data-url="/pages/demo/login/login" bindtap="tapToUrl">登录,享受更多服务。</view>
+        <view data-url="/pages/demo/login/login" bindtap="tapToUrl">
+          <ui-tag class="text-sm" bg="bg-red-light" ui="sm" info="点击申请VIP " />
+        </view>
       </view>
     </view>
-    <view class="mt-5">
-      <view class="ui-grid ui-cols-3 ui-cols-lg-6 p-3 radius-l ui-BG">
+
+    <view class="mt-5 mx-2">
+      <view class="ui-grid ui-cols-2 ui-cols-lg-6 p-3">
+        <view class="ui-item mt-2">
+          <view class="padding-sm radius text-lg text-cut" style="width: 220px;" >
+            已连续签到：<text class="text-xxxl text-orange">{{signedDays||0}}</text> 天
+          </view>
+        </view>
+        <view class="ui-item mt-2" bindtap="show">
+          <view class="padding-sm radius border mr-1" style="float:right;">
+            <button class="ui-btn text-red ui-BG" bindtap="btnSigned">{{signBtnTxt}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="mt-4">
+      <view class="ui-grid ui-cols-4 ui-cols-lg-6 p-3 radius-lg ui-BG">
         <view class="ui-item mt-2">
           <view class="text-center">
             <navigator target="miniProgram" open-type="navigate" app-id="wxebadf544ddae62cb" path="pages/survey/index?sid=9685739&hash=6d00" version="release">
@@ -20,7 +42,7 @@
         </view>
         <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=star" bindtap="tapToUrl">
           <view class="text-center text-xxxl">
-            <view class="cicon-favorite text-red text-center"></view>
+            <view class="cicon-thumb-up-line text-red text-center"></view>
           </view>
           <view class="text-center">我的点赞</view>
         </view>
@@ -29,6 +51,12 @@
             <view class="cicon-star text-orange text-center"></view>
           </view>
           <view class="text-center">我的收藏</view>
+        </view>
+        <view class="ui-item mt-2" bindtap="show">
+          <view class="text-center text-xxxl">
+            <view class="cicon-goodsnew text-mauve text-center"></view>
+          </view>
+          <view class="text-center">我的积分</view>
         </view>
       </view>
     </view>

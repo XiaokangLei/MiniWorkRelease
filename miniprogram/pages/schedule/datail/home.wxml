@@ -37,10 +37,10 @@
     <!-- 点赞/取消 -->
     <view class="px-6">
       <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
-        <text class="cicon-favorite text-orange text-sl" />
+        <text class="cicon-thumb-up-line text-orange text-sl" />
       </view>
       <view style="margin-right: -10rpx;" bindtap="statr_sc" data-id="statr" wx:else>
-        <text class="cicon-favorite-o text-grey text-sl" />
+        <text class="cicon-thumb-up-line-o text-grey text-sl" />
       </view>
     </view>
   </view>

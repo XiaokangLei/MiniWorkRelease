@@ -4,7 +4,7 @@
   <!-- 校招日程列表 -->
   <view class="ui-container">
 
-    <ui-tab tab="{{['校招倒计时', '题目&其他']}}" value="{{tabValue}}" align="flex-center" bind:change="tabNavChange" />
+    <ui-tab tab="{{['校招倒计时', '算法刷题', '内推资讯']}}" value="{{tabValue}}" tpl="trapezoid" align="flex-bar" bind:change="tabNavChange" />
 
     <view class="page-card-box-new mt-3" wx:for="{{xw_list}}" wx:key="item">
       <view class="ui-BG page-card-view" data-id="{{item._id}}" data-info="{{item}}" data-html="{{item.html}}" data-time="{{item.add_time}}" data-title="{{item.tille}}" bindtap="tapToUrl">
