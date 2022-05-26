@@ -17,8 +17,9 @@
     </view>
   </ui-navbar>
 
+
   <!-- 校招日程TOP信息 -->
-  <view class="page-card-box" style="margin-top: {{sys_navBar+0.1*sys_capsule.height}}px;">
+  <view class="page-card-box" style="margin-top: {{sys_navBar}}px;">
     <view class="bg-pink-gradient shadow-blur page-card-view">
       <view class="left-view">
         <view class="text-bold text-xl">笔试面试高频题</view>
@@ -30,10 +31,15 @@
       </view>
     </view>
   </view>
+  <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
+    <ui-loading color isSlot>
+      <text class="text-lg text-blue">Loading..</text>
+    </ui-loading>
+  </view>
   <!-- 题目列表 -->
   <view class="ui-container">
     <block wx:for="{{navData}}" wx:for-item="nav" wx:key="index">
-      <ui-title title="{{nav.title}}" depth="2" ui="ml-3" hasLine/>
+      <ui-title title="{{nav.title}}" depth="2" ui="ml-3" hasLine />
       <view class="ui-grid ui-cols-2" style="margin-top: -20rpx;">
         <block wx:for="{{nav.sub}}" wx:for-index="sub_index" wx:key="sub_index">
           <view class="ui-item p-3">

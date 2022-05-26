@@ -39,7 +39,7 @@
     </view>
 
     <view class="page-card-box-new mt-3" wx:for="{{tabValue==0?list:tabValue==1?listhot:listteachin}}" wx:key="item">
-      <view class="ui-BG page-card-view" data-id="{{item._id}}" data-info="{{item}}" data-html="{{item.html}}" data-time="{{item.add_time}}" data-title="{{item.tille}}" bindtap="tapToUrl">
+      <view class="ui-BG page-card-view shadow" data-id="{{item._id}}" data-info="{{item}}" data-html="{{item.html}}" data-time="{{item.add_time}}" data-title="{{item.tille}}" bindtap="tapToUrl">
         <block wx:if="{{tabValue!=2}}">
           <!-- 左半部分 -->
           <view class="left-view">
@@ -60,7 +60,7 @@
           </view>
           <!-- 右半部分 -->
           <view class="right-view">
-            <image src="{{item.img}}" mode="aspectFill" />
+            <image src="{{item.img}}" lazy-load="true" mode="aspectFill" />
             <view>
               <view class="text text-green text-bold text-l" wx:if="{{m2.format(item.end)}}">
                 <ui-tag class="text-lg" bg="bg-green-gradient" ui="sm" info="{{m2.format(item.end)}} 天截止" />

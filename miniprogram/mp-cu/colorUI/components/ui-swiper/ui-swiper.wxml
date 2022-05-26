@@ -1,5 +1,6 @@
 <view class="ui-swiper {{mode}} {{swiperCss}}">
-    <swiper circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper"
+    <swiper circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" previousMargin="1rpx"
+      nextMargin="1rpx" duration="{{duration}}" class="swiper"
             style="{{height?'height: ' + height:''}}" bindchange="swiperChange">
         <swiper-item wx:for="{{info}}" wx:key="index" class="swiper-item {{cur === index?'cur':''}}" data-item="{{item}}" bindtap="toTap">
             <view class="ui-swiper-main radius">

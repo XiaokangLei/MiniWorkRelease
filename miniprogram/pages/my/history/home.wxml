@@ -10,7 +10,7 @@
   <view class="ui-container" wx:else>
 
     <block wx:if="{{listData.length > 0}}">
-      <view class="radius-l ui-BG m-2" wx:for="{{listData}}" wx:key="item">
+      <view class="radius-l ui-BG m-2 shadow" wx:for="{{listData}}" wx:key="item">
         <ui-title title="{{item.version}}" depth="3" isIcon ui="mx-2">
           <text class="text-green text-sm">{{item.time}}</text>
         </ui-title>

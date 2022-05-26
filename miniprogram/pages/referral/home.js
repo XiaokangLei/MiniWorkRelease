@@ -4,13 +4,15 @@ Page({
   data: {
     scrollTop: 0,
     list: [],
-    bgload: "/static/logo.png"
+    bgload: "/static/logo.png",
+    loading: true
   },
   onLoad() {
     // 获取首页数据
     api.GetReferral('mini-referral-r').then(res => {
       this.setData({
-        list: res.data
+        list: res.data,
+        loading: false
       })
     })
 

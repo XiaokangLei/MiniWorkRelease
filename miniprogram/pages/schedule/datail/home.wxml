@@ -19,7 +19,7 @@
     </ui-loading>
   </view>
 
-  <view class="my-3">
+  <view class="my-1">
     <towxml nodes="{{html}}" />
   </view>
 

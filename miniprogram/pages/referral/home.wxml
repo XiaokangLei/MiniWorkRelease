@@ -31,12 +31,17 @@
       </view>
     </view>
   </view>
+  <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
+    <ui-loading color isSlot>
+      <text class="text-lg text-blue">Loading..</text>
+    </ui-loading>
+  </view>
   <!-- 内推信息 -->
   <view class="ui-container">
     <ui-title title="热门内推" depth="2" isIcon ui="ml-3" />
     <view class="ui-cards goods col-goods">
-      <view class="ui-item" wx:for="{{list}}" wx:key="index" data-info="{{item.each}}" data-logo="{{item.logo}}" data-company="{{item.name}}" data-comment="{{item.comment}}" bindtap="toProductDetail">
-        <image src="{{item.cover}}" class="image" mode="aspectFill" />
+      <view class="ui-item shadow" wx:for="{{list}}" wx:key="index" data-info="{{item.each}}" data-logo="{{item.logo}}" data-company="{{item.name}}" data-comment="{{item.comment}}" bindtap="toProductDetail">
+        <image src="{{item.cover}}" lazy-load="true" class="image" mode="aspectFill" />
         <view class="content">
           <view class="flex-bar">
             <view class="text-cut text-xl text-bold">{{ item.name }}</view>

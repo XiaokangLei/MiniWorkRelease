@@ -22,7 +22,7 @@
   </ui-navbar>
   <!-- 自定义swiper -->
   <view style="margin-top: {{-0.5*sys_capsule.height}}px;"></view>
-  <ui-swiper info="{{swiperList}}" height="300rpx" mode="card" dotStyle="long" dotCur="ui-BG-Main" />
+  <ui-swiper info="{{swiperList}}" height="320rpx" imgHeight="300rpx" mode="card" dotStyle="long" dotCur="ui-BG-Main" />
 
   <view class="ui-container">
 
@@ -30,14 +30,14 @@
 
       <view class="flex-bar">
         <view class="flex-bar">
-          <ui-title title="{{item.name}}" depth="2" ui="ml-3" hasDot/>
+          <ui-title title="{{item.name}}" depth="2" ui="ml-3" hasDot />
         </view>
         <view class="flex-bar mr-3 mt-3" data-url="{{item.more}}" bindtap="tapToUrl">
           <ui-tag bg="bg-blue-thin" info="更多"></ui-tag>
         </view>
       </view>
       <!-- 两列 -->
-      <view class="ui-grid ui-cols-2 mx-2">
+      <view class="ui-grid ui-cols-2">
         <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
           <ui-card ui="shadow m-3 radius" imgHeight="180rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
             <view slot="tag" class="ui-tag bg-mask-20 radius-lr">
@@ -51,7 +51,7 @@
       </view>
       <!-- 单个 -->
       <view class="ui-cards goods col-goods">
-        <view class="ui-item" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
+        <view class="ui-item shadow" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
           <image src="{{item.img}}" mode="aspectFill" />
           <view class="content">
             <view class="flex-bar mt-1">
