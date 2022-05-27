@@ -20,7 +20,8 @@
     "pages/home/resume/home",
     "pages/schedule/datail/home",
     "pages/my/points/home",
-    "pages/my/points/detail/home"
+    "pages/my/points/detail/home",
+    "pages/my/sign/home"
   ],
   "window": {
     "backgroundTextStyle": "light",

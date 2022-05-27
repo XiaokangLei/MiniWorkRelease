@@ -8,9 +8,20 @@ Page({
     scrollTop: 0,
     signBtnTxt: "每日签到",
     signedDays: 0, //连续签到天数
+    signed: 0,
+    signedRightCount: 0,
   },
   onShow: async function () {
     await this.getMemberInfo()
+  },
+  /**
+   * 签到
+   * @param {*} e 
+   */
+  btnSigned: async function (e) {
+    wx.navigateTo({
+      url: '/pages/my/sign/home?signedDays=' + this.data.signedDays + '&signed=' + this.data.signed + '&signedRightCount=' + this.data.signedRightCount
+    })
   },
   /**
    * 获取用户信息

@@ -20,7 +20,7 @@
             已连续签到：<text class="text-xxxl text-orange">{{signedDays||0}}</text> 天
           </view>
         </view>
-        <view class="ui-item mt-2" bindtap="show">
+        <view class="ui-item mt-2">
           <view class="padding-sm radius" style="float:right;">
             <button class="ui-btn text-red ui-BG round" bindtap="btnSigned">{{signBtnTxt}}</button>
           </view>

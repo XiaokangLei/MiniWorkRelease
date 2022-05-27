@@ -1,0 +1,35 @@
+<!--pages/my/sign/home.wxml-->
+<ui-sys doc title="签到">
+  <view class="m-4 pb-3">
+    <view class="radius">
+      已连续签到:
+      <text class="text-sl text-orange">{{signedDays}}</text>
+      天, 拥有 <text class="text-sl text-orange">{{signedRightCount}}</text> 次补签机会
+    </view>
+    <view class="radius text-sm mt-2">连续签到可以获取更多积分哦~</view>
+  </view>
+
+  <view class="ui-BG m-3 radius-lg" style="height: 320px;">
+    <view class="p-1">
+      <calendar id="calendar" calendarConfig="{{calendarConfig}}" bind:onTapDay="onTapDay" bind:afterTapDay="afterTapDay" bind:whenChangeMonth="whenChangeMonth" bind:afterCalendarRender="afterCalendarRender"></calendar>
+    </view>
+  </view>
+  <view class='sign-new mb-5'>
+      <view class='new-head'>
+        <!-- 未签到 -->
+        <view wx:if='{{!signed}}' class='sig-qiu sig-qiu-no' bindtap='bindSignFn'>
+          <label class='ti'>签到</label>
+        </view>
+        <!-- 已签到 -->
+        <view wx:else class='sig-qiu sig-qiu-yes'>
+          <label class='ti'>已签到</label>
+        </view>
+      </view>
+    </view>
+  <view wx:if="{{showBanner}}" class="cu-item margin-top-xs">
+    <view class="content padding-right-sm padding-left-sm">
+      <ad binderror="adError" bindclose="adClose" unit-id="{{showBannerId}}"></ad>
+    </view>
+  </view>
+
+</ui-sys>

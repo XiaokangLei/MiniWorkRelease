@@ -19,8 +19,22 @@ export const formatTimeOnly = time => {
   return [year, month, day].map(formatNumber).join('-')
 }
 
+const getYear = time => {
+  var date = new Date(time);
+  var year = date.getFullYear()
+  return year
+}
+
+const getMonth = time => {
+  var date = new Date(time);
+  var month = date.getMonth() + 1
+  return month
+}
+
 
 module.exports = {
   formatTime: formatTime,
-  formatTimeOnly: formatTimeOnly
+  formatTimeOnly: formatTimeOnly,
+  getYear: getYear,
+  getMonth: getMonth
 }
