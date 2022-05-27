@@ -98,6 +98,74 @@ function getPointsDetailList(page, openId) {
     .get()
 }
 
+function getSignedDetail(openId, year, month) {
+  return wx.cloud.callFunction({
+    name: 'memberService',
+    data: {
+      action: "getSignedDetail",
+      openId: openId,
+      year: year,
+      month: month
+    }
+  })
+}
+
+/**
+ * 新增签到
+ */
+function addSign(info) {
+  return wx.cloud.callFunction({
+    name: 'memberService',
+    data: {
+      action: "addSign",
+      info: info
+    }
+  })
+}
+
+/**
+ * 获取分享明细
+ * @param {} openId 
+ * @param {*} date 
+ */
+function getShareDetailList(openId, date) {
+  return db.collection('mini_share_detail')
+    .where({
+      shareOpenId: openId,
+      date: date
+    })
+    .limit(5)
+    .get()
+}
+
+/**
+ * 分享得积分
+ * @param {*} info 
+ */
+function addShareDetail(info) {
+  return wx.cloud.callFunction({
+    name: 'memberService',
+    data: {
+      action: "addShareDetail",
+      info: info
+    }
+  })
+}
+
+/**
+ * 新增积分
+ */
+function addPoints(taskType, info) {
+  return wx.cloud.callFunction({
+    name: 'memberService',
+    data: {
+      action: "addPoints",
+      taskType: taskType,
+      info: info
+    }
+  })
+}
+
 
 module.exports = {
   GetDataByKind: GetDataByKind,
@@ -107,5 +175,10 @@ module.exports = {
   GetRecruitment: GetRecruitment,
   GetMyInfoByType: GetMyInfoByType,
   getMemberInfo: getMemberInfo,
-  getPointsDetailList:getPointsDetailList,
+  getPointsDetailList: getPointsDetailList,
+  getSignedDetail: getSignedDetail,
+  addSign: addSign,
+  getShareDetailList: getShareDetailList,
+  addShareDetail: addShareDetail,
+  addPoints: addPoints,
 }

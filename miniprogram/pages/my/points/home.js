@@ -26,24 +26,23 @@ Page({
     highLightBtnTxt: "立即兑换",
     shareList: [{
       nickName: "待邀请",
-      bgUrl: "bg-gary",
+      bgUrl: "bg-gery",
       icon: "cicon-person-add-o",
-      style: ""
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gary",
+      bgUrl: "bg-gery",
       icon: "cicon-person-add-o"
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gary",
+      bgUrl: "bg-gery",
       icon: "cicon-person-add-o"
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gary",
+      bgUrl: "bg-gery",
       icon: "cicon-person-add-o"
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gary",
+      bgUrl: "bg-gery",
       icon: "cicon-person-add-o"
     }]
   },
@@ -88,9 +87,9 @@ Page({
       })
     }
 
-    if (advert.taskVideoStatus) {
-      that.loadInterstitialAd(advert.taskVideoId);
-    }
+    // if (advert.taskVideoStatus) {
+    //   that.loadInterstitialAd(advert.taskVideoId);
+    // }
 
     let shareList = await api.getShareDetailList(app.globalData.openid, util.formatTime(new Date()))
     let defaultShareList = that.data.shareList
@@ -133,7 +132,7 @@ Page({
    */
   clickSigned: async function (e) {
     wx.navigateTo({
-      url: '../sign/sign?signedDays=' + this.data.signedDays + '&signed=' + this.data.signed + '&signedRightCount=' + this.data.signedRightCount
+      url: '/pages/my/sign/home?signedDays=' + this.data.signedDays + '&signed=' + this.data.signed + '&signedRightCount=' + this.data.signedRightCount
     })
   },
 
@@ -198,6 +197,17 @@ Page({
     this.setData({
       showPointDescModal: false
     })
+  },
+
+  /**
+   * 分享邀请
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '小贝校招',
+      imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
+      path: '/pages/home/home?openid=' + app.globalData.openid
+    }
   },
 
   /**

@@ -60,17 +60,17 @@ Page({
       signedRightCount:signedRightCount
     })
 
-    // app.checkUserInfo(function (userInfo, isLogin) {
-    //   if (!isLogin) {
-    //     that.setData({
-    //       showLogin: true
-    //     })
-    //   } else {
-    //     that.setData({
-    //       userInfo: userInfo
-    //     });
-    //   }
-    // });
+    app.checkUserInfo(function (userInfo, isLogin) {
+      if (!isLogin) {
+        that.setData({
+          showLogin: true
+        })
+      } else {
+        that.setData({
+          userInfo: userInfo
+        });
+      }
+    });
   },
   /**
    * 日历组件渲染之后
@@ -199,7 +199,7 @@ Page({
   bindSignFn: function (e) {
 
     let that = this
-    let tempalteId = 'J-MZ6Zrd08TobUgWPbjQcnJt9BHbc9M-nOOxirC8nWA'
+    let tempalteId = 'JNwwF1m0rmbOt9v0lCi_RoUq_N7eg04tZLuWO2S-pjI'
     that.submitSign('', tempalteId, that).then((res) => {
       console.info(res)
     })
@@ -237,7 +237,8 @@ Page({
         accept: accept,
         templateId: templateId
       }
-
+      console.log("-------------------------")
+      console.log(info)
       let result = await api.addSign(info)
       await that.afterCalendarRender()
       that.setData({

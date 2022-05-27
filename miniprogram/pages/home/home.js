@@ -10,7 +10,32 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  onLoad: async function (options) {
+    let that = this
+    //有openid跳授权计算积分
+    if (options.openid) {
+      let shareOpenId = options.openid
+      app.checkUserInfo(function (userInfo, isLogin) {
+        if (!isLogin) {
+          that.setData({
+            showLogin: true
+          })
+        } else {
+          that.setData({
+            userInfo: userInfo
+          });
+        }
+      });
+
+      if (that.data.userInfo) {
+        let info = {
+          shareOpenId: shareOpenId,
+          nickName: app.globalData.userInfo.nickName,
+          avatarUrl: app.globalData.userInfo.avatarUrl
+        }
+        await api.addShareDetail(info)
+      }
+    }
     // 获取首页数据
     api.GetDataByKind('mini-index-r', 'home').then(res => {
       this.setData({
@@ -19,8 +44,9 @@ Page({
       })
     })
   },
+  
   onShow() {
-    
+
   },
   // 监听用户滑动页面事件。
   onPageScroll(e) {

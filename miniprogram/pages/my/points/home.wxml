@@ -66,7 +66,7 @@
         <view class="text-sm text-red">+50积分/次</view>
       </view>
       <view class="flex-treble margin-xs text-right pr-4">
-        <button class="ui-btn bg-orange-thin round shadow" bindtap="clickForgetRight">立即观看</button>
+        <button class="ui-btn bg-orange-thin round shadow" bindtap="loadInterstitialAd">立即观看</button>
       </view>
     </view>
     <view class="flex solid-bottom align-center margin-left margin-right padding-bottom ">
@@ -97,10 +97,8 @@
     </view>
     <view class="flex solid-bottom padding justify-between pt-3">
       <view class="my-4 mx-2" wx:for="{{shareList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
-        <view class="cu-avatar lg round {{item.bgUrl}}" style="{{item.style}}">
-          <ui-avatar ui="round xxl" bg="bg-orange-light" icon="{{item.icon}}"/>
-        </view>
-        <view class="text-center text-sm">{{item.nickName}}</view>
+        <ui-avatar ui="round xxl" bg="{{item.bgUrl}}" icon="{{item.icon}}" />
+        <view class="text-center text-sm mt-3">{{item.nickName}}</view>
       </view>
     </view>
     <view class="text-center pt-3">
