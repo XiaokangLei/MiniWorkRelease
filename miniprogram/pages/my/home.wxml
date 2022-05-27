@@ -21,8 +21,8 @@
           </view>
         </view>
         <view class="ui-item mt-2" bindtap="show">
-          <view class="padding-sm radius border mr-1" style="float:right;">
-            <button class="ui-btn text-red ui-BG" bindtap="btnSigned">{{signBtnTxt}}</button>
+          <view class="padding-sm radius" style="float:right;">
+            <button class="ui-btn text-red ui-BG round" bindtap="btnSigned">{{signBtnTxt}}</button>
           </view>
         </view>
       </view>
@@ -52,7 +52,7 @@
           </view>
           <view class="text-center">我的收藏</view>
         </view>
-        <view class="ui-item mt-2" bindtap="show">
+        <view class="ui-item mt-2" data-url="/pages/my/points/home" bindtap="tapToUrl">
           <view class="text-center text-xxxl">
             <view class="cicon-goodsnew text-mauve text-center"></view>
           </view>

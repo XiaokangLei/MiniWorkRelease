@@ -11,9 +11,11 @@
 
     <block wx:if="{{listData.length > 0}}">
       <view class="radius-l ui-BG m-2 shadow" wx:for="{{listData}}" wx:key="item">
+
         <ui-title title="{{item.version}}" depth="3" isIcon ui="mx-2">
           <text class="text-green text-sm">{{item.time}}</text>
         </ui-title>
+
         <block wx:for="{{item.content}}" wx:key="item">
           <view class="px-3 pb-2">
             <ui-checkbox value="{{true}}" unbg="borders border-blue" bg="bg-blue-gradient" bind:change="style2Change">
@@ -21,12 +23,9 @@
             </ui-checkbox>
           </view>
         </block>
+        
       </view>
     </block>
-
-    <!-- <block wx:else>
-      <van-empty image="search" description="暂无内容" />
-    </block> -->
 
   </view>
 </ui-sys>

@@ -1,0 +1,20 @@
+<!--pages/my/points/detail/home.wxml-->
+<ui-sys doc title="积分明细">
+
+  <view class="ui-BG">
+    <view class="flex border-bottom align-center justify-between" wx:for="{{pointList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="p-3 m-2 radius">
+        <view class="text-lg">{{item.desc}}</view>
+        <view class="pt-2 text-grey">{{item.date}}</view>
+      </view>
+      <view class="p-2 m-2 radius {{item.count > 0 ? 'text-green' : 'text-red'}}">
+        {{item.count > 0 ? '+' + item.count : item.count}}积分
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据不存在 -->
+  <!-- <view wx:if="{{nodata}}">
+    <template is="nodata" />
+  </view> -->
+</ui-sys>

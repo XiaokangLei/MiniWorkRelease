@@ -1,5 +1,6 @@
 <!-- 自定义tabbar -->
 <ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+
   <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}">
     <!-- 背景图 -->
     <view class="flex-bar p-3" wx:if="{{scrollTop > sys_navBar}}">
@@ -20,10 +21,12 @@
       <view style="{{'width:'+ (sys_capsule.width + 10)+'px; height:' + sys_capsule.height+'px'}}" />
     </view>
   </ui-navbar>
+
   <!-- 自定义swiper -->
   <view style="margin-top: {{-0.5*sys_capsule.height}}px;"></view>
   <ui-swiper info="{{swiperList}}" height="320rpx" imgHeight="300rpx" mode="card" dotStyle="long" dotCur="ui-BG-Main" />
 
+  <!-- 内容 -->
   <view class="ui-container">
 
     <block wx:for="{{list}}" wx:key="index">
@@ -36,7 +39,7 @@
           <ui-tag bg="bg-blue-thin" info="更多"></ui-tag>
         </view>
       </view>
-      <!-- 两列 -->
+      <!-- 两个图片 -->
       <view class="ui-grid ui-cols-2">
         <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
           <ui-card ui="shadow m-3 radius" imgHeight="180rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
@@ -49,7 +52,7 @@
           </ui-card>
         </view>
       </view>
-      <!-- 单个 -->
+      <!-- 单个图片 -->
       <view class="ui-cards goods col-goods">
         <view class="ui-item shadow" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
           <image src="{{item.img}}" mode="aspectFill" />

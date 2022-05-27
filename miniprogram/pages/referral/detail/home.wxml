@@ -10,7 +10,7 @@
         <text class="cicon-qr-code-line text-sl text-yellow"></text>
       </view> -->
     </view>
-    
+
     <block wx:for="{{info}}" wx:key="index">
       <view class="p-3 my-3 ui-BG radius">
         <view style="width: 650rpx;" class="py-3 text-cut">
@@ -48,12 +48,6 @@
         </view>
       </view>
     </block>
-
-    <!-- 留言板 -->
-    <!-- <view class="bg-blue" id="comment-btn" bindtap="toComment">
-      <text>留言板</text>
-      <van-icon name="play" size="20px" color="yellow" />
-    </view> -->
 
   </view>
 

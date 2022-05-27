@@ -35,28 +35,26 @@ function GetRecruitmentList(deName) {
 }
 
 function GetRecruitment(deName, kind) {
-  if(kind == 0){
+  if (kind == 0) {
     return db.collection(deName)
-    .limit(20)
-    .where({
-      end: _.gte(time.formatTimeOnly(new Date(Date.now())))
-    })
-    .orderBy('end', 'asc')
-    .get()
-  }
-  else if(kind == 1){
+      .limit(20)
+      .where({
+        end: _.gte(time.formatTimeOnly(new Date(Date.now())))
+      })
+      .orderBy('end', 'asc')
+      .get()
+  } else if (kind == 1) {
     return db.collection(deName)
       .limit(20)
       .orderBy('browse', 'desc')
       .get()
-  }
-  else if(kind == 2){
+  } else if (kind == 2) {
     return db.collection(deName)
       .limit(20)
       .orderBy('_createTime', 'desc')
       .get()
   }
-  
+
 }
 
 
@@ -71,6 +69,35 @@ function GetMyInfoByType(deName, type, openid) {
     .get()
 }
 
+/**
+ * 获取会员信息
+ * @param {} openId 
+ */
+function getMemberInfo(openId) {
+  return db.collection('mini_member')
+    .where({
+      openId: openId
+    })
+    .limit(1)
+    .get()
+}
+
+/**
+ * 获取积分明细列表
+ * @param {*} page 
+ * @param {*} openId 
+ */
+function getPointsDetailList(page, openId) {
+  return db.collection('mini_point_detail')
+    .where({
+      openId: openId
+    })
+    .orderBy('createTime', 'desc')
+    .skip((page - 1) * 20)
+    .limit(20)
+    .get()
+}
+
 
 module.exports = {
   GetDataByKind: GetDataByKind,
@@ -78,5 +105,7 @@ module.exports = {
   GetDataByTitle: GetDataByTitle,
   GetRecruitmentList: GetRecruitmentList,
   GetRecruitment: GetRecruitment,
-  GetMyInfoByType: GetMyInfoByType
+  GetMyInfoByType: GetMyInfoByType,
+  getMemberInfo: getMemberInfo,
+  getPointsDetailList:getPointsDetailList,
 }
