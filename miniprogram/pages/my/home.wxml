@@ -1,100 +1,101 @@
 <ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
-  <view class="ui-container" style="margin-top: {{sys_navBar}}px;">
-    <view class="flex-bar my-4 ml-2">
-      <view data-url="/pages/demo/login/login" bindtap="show" bindtap="tapToUrl">
-        <ui-avatar ui="xxl round" src="/static/logo.png" />
-      </view>
-
-      <view class="flex-sub pl-3">
-        <view class="text-xl ml-2" data-url="/pages/demo/login/login" bindtap="tapToUrl">登录,享受更多服务。</view>
-        <view bindtap="clickVip">
-          <ui-tag class="text-sm" bg="bg-red-light" ui="sm" info="点击申请VIP " />
-        </view>
-      </view>
+  <!-- <view class="ui-container" style="margin-top: {{sys_navBar}}px;"> -->
+  <view class="flex-bar my-4 ml-2 mt-6">
+    <view class="mt-5 ml-2" data-url="/pages/demo/login/login" bindtap="show" bindtap="tapToUrl">
+      <ui-avatar ui="xxl" src="/static/logo.png" />
     </view>
 
-    <view class="mt-5 mx-2">
-      <view class="ui-grid ui-cols-2 ui-cols-lg-6 p-3">
-        <view class="ui-item mt-2">
-          <view class="padding-sm radius text-lg text-cut" style="width: 220px;" >
-            已连续签到：<text class="text-xxxl text-orange">{{signedDays||0}}</text> 天
-          </view>
-        </view>
-        <view class="ui-item mt-2">
-          <view class="padding-sm radius" style="float:right;">
-            <button class="ui-btn text-red ui-BG round" bindtap="btnSigned">{{signBtnTxt}}</button>
-          </view>
-        </view>
+    <view class="flex-sub mt-5">
+      <view class="text-xl ml-2 pl-2" data-url="/pages/demo/login/login" bindtap="tapToUrl">
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="pt-1" bindtap="clickVip">
+        <ui-tag bg="bg-red-light" ui="sm" info="点击申请VIP " />
       </view>
     </view>
-
-    <view class="mt-4">
-      <view class="ui-grid ui-cols-4 ui-cols-lg-6 p-3 radius-lg ui-BG">
-        <view class="ui-item mt-2">
-          <view class="text-center">
-            <navigator target="miniProgram" open-type="navigate" app-id="wxebadf544ddae62cb" path="pages/survey/index?sid=9685739&hash=6d00" version="release">
-              <view>
-                <view class="cicon-event-list text-pink text-center text-xxxl"></view>
-                <view class="text-center">我要内推</view>
-              </view>
-            </navigator>
-          </view>
-        </view>
-        <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=star" bindtap="tapToUrl">
-          <view class="text-center text-xxxl">
-            <view class="cicon-thumb-up-line text-red text-center"></view>
-          </view>
-          <view class="text-center">我的点赞</view>
-        </view>
-        <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=collect" data-kind="collect" bindtap="tapToUrl">
-          <view class="text-center text-xxxl">
-            <view class="cicon-star text-orange text-center"></view>
-          </view>
-          <view class="text-center">我的收藏</view>
-        </view>
-        <view class="ui-item mt-2" data-url="/pages/my/points/home" bindtap="tapToUrl">
-          <view class="text-center text-xxxl">
-            <view class="cicon-goodsnew text-mauve text-center"></view>
-          </view>
-          <view class="text-center">我的积分</view>
-        </view>
-      </view>
-    </view>
-    <ui-menu ui="mt-3 radius-lg text-lg">
-      <ui-menu-item arrow title="开源/待办" icon="cicon-github text-orange" data-url="/pages/my/github/home" bindtap="tapToUrl" />
-      <ui-menu-item arrow title="联系/咨询" icon="cicon-chat-smiles text-green" data-url="/pages/my/chat/home" bindtap="tapToUrl" />
-      <ui-menu-item arrow title="资源下载" icon="cicon-cloud-download text-blue" data-url="/pages/my/resource/home" bindtap="tapToUrl" />
-      <ui-menu-item arrow title="打赏支持" icon="cicon-redpacket text-red" bindtap="showQrcode" />
-    </ui-menu>
-    <ui-menu ui="mt-3 radius-lg  text-lg">
-      <ui-menu-item arrow title="历史版本" icon="cicon-shengji text-mauve" data-url="/pages/my/history/home" bindtap="tapToUrl" />
-      <ui-menu-item arrow title="设置" icon="cicon-set text-cyan" data-url="/pages/my/set/home" bindtap="tapToUrl" />
-      <ui-menu-item arrow title="关于" icon="cicon-info text-yellow" data-url="/pages/my/about/home" bindtap="tapToUrl" />
-    </ui-menu>
-
   </view>
-  <!-- vip窗口 -->
-<view class="cu-modal {{showVIPModal?'show':''}}">
-    <view class="cu-dialog">
-        <view class="cu-bar bg-white justify-end">
-            <view class="content">成为VIP说明</view>
-            <view class="action" bindtap="hideModal">
-                <text class="_icon-close text-red text-xl"></text>
-            </view>
+
+  <view class="mt-4 mx-2">
+    <view class="ui-grid ui-cols-2 ui-cols-lg-6 p-3">
+      <view class="ui-item mt-2">
+        <view class="padding-sm radius text-lg text-cut" style="width: 220px;">
+          已连续签到：<text class="text-xxxl text-orange">{{signedDays||0}}</text> 天
         </view>
-        <view class="p-4 pb-5 bg-white">
-            <view>申请条件：打赏过作者的用户即可申请</view>
-            <view class="pt-3">VIP权益：拥有VIP专属标签</view>
+      </view>
+      <view class="ui-item mt-2">
+        <view class="padding-sm radius" style="float:right;">
+          <button class="ui-btn text-red ui-BG round" bindtap="btnSigned">{{signBtnTxt}}</button>
         </view>
-        <view class="cu-bar bg-white">
-            <view class="action margin-0 flex-sub " bindtap="hideModal">取消</view>
-            <view class="action margin-0 flex-sub text-green solid-left" bindtap="showQrcode">
-                打赏
-            </view>
-            <view class="action margin-0 flex-sub text-green solid-left" bindtap="applyVip">
-                申请
-            </view>
-        </view>
+      </view>
     </view>
-</view>
+  </view>
+
+  <view class="mt-4">
+    <view class="ui-grid ui-cols-4 ui-cols-lg-6 p-3 ui-BG">
+      <view class="ui-item mt-2 pb-2">
+        <view class="text-center">
+          <navigator target="miniProgram" open-type="navigate" app-id="wxebadf544ddae62cb" path="pages/survey/index?sid=9685739&hash=6d00" version="release">
+            <view>
+              <view class="cicon-event-list text-pink text-center text-xxxl"></view>
+              <view class="text-center pt-1">我要内推</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=star" bindtap="tapToUrl">
+        <view class="text-center text-xxxl">
+          <view class="cicon-thumb-up-line text-red text-center"></view>
+        </view>
+        <view class="text-center">我的点赞</view>
+      </view>
+      <view class="ui-item mt-2" data-url="/pages/my/star/home?kind=collect" data-kind="collect" bindtap="tapToUrl">
+        <view class="text-center text-xxxl">
+          <view class="cicon-star text-orange text-center"></view>
+        </view>
+        <view class="text-center">我的收藏</view>
+      </view>
+      <view class="ui-item mt-2" data-url="/pages/my/points/home" bindtap="tapToUrl">
+        <view class="text-center text-xxxl">
+          <view class="cicon-goodsnew text-mauve text-center"></view>
+        </view>
+        <view class="text-center">我的积分</view>
+      </view>
+    </view>
+  </view>
+  <ui-menu ui="mt-3 text-l">
+    <ui-menu-item arrow title="开源/待办" icon="cicon-github text-orange" data-url="/pages/my/github/home" bindtap="tapToUrl" />
+    <ui-menu-item arrow title="联系/咨询" icon="cicon-chat-smiles text-green" data-url="/pages/my/chat/home" bindtap="tapToUrl" />
+    <ui-menu-item arrow title="资源下载" icon="cicon-cloud-download text-blue" data-url="/pages/my/resource/home" bindtap="tapToUrl" />
+    <ui-menu-item arrow title="打赏支持" icon="cicon-redpacket text-red" bindtap="showQrcode" />
+  </ui-menu>
+  <ui-menu ui="mt-3 text-l">
+    <ui-menu-item arrow title="历史版本" icon="cicon-shengji text-mauve" data-url="/pages/my/history/home" bindtap="tapToUrl" />
+    <ui-menu-item arrow title="系统设置" icon="cicon-set text-cyan" data-url="/pages/my/set/home" bindtap="tapToUrl" />
+    <ui-menu-item arrow title="关于" icon="cicon-info text-yellow" data-url="/pages/my/about/home" bindtap="tapToUrl" />
+  </ui-menu>
+
+  <!-- vip窗口 -->
+  <view class="cu-modal {{showVIPModal?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">成为VIP说明</view>
+        <view class="action" bindtap="hideModal">
+          <text class="_icon-close text-red text-xl"></text>
+        </view>
+      </view>
+      <view class="p-4 pb-5 bg-white">
+        <view>申请条件：打赏过作者的用户即可申请</view>
+        <view class="pt-3">VIP权益：拥有VIP专属标签</view>
+      </view>
+      <view class="cu-bar bg-white">
+        <view class="action margin-0 flex-sub " bindtap="hideModal">取消</view>
+        <view class="action margin-0 flex-sub text-green solid-left" bindtap="showQrcode">
+          打赏
+        </view>
+        <view class="action margin-0 flex-sub text-green solid-left" bindtap="applyVip">
+          申请
+        </view>
+      </view>
+    </view>
+  </view>
 </ui-sys>

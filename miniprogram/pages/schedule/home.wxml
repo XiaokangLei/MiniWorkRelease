@@ -33,12 +33,12 @@
   </view>
 
   <!-- 校招日程列表 -->
-  <view class="ui-container">
-    <view class="p-3 text-center">
+  <!-- <view class="ui-container"> -->
+    <view class="py-3 text-center">
       <ui-tab tab="{{['校招倒计时', '热门校招', '校园宣讲会']}}" value="{{tabValue}}" tpl="trapezoid" align="flex-bar" bind:change="tabNavChange" />
     </view>
 
-    <view class="page-card-box-new mt-3" wx:for="{{tabValue==0?list:tabValue==1?listhot:listteachin}}" wx:key="item">
+    <view class="page-card-box-new mt-2 mx-3" wx:for="{{tabValue==0?list:tabValue==1?listhot:listteachin}}" wx:key="item">
       <view class="ui-BG page-card-view shadow" data-id="{{item._id}}" data-info="{{item}}" data-html="{{item.html}}" data-time="{{item.add_time}}" data-title="{{item.tille}}" bindtap="tapToUrl">
         <block wx:if="{{tabValue!=2}}">
           <!-- 左半部分 -->
@@ -94,7 +94,7 @@
     </view>
     <!-- </block> -->
 
-  </view>
+  <!-- </view> -->
 
 </ui-sys>
 

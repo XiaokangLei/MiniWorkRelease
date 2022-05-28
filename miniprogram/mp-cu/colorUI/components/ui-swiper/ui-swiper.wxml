@@ -3,7 +3,7 @@
       nextMargin="1rpx" duration="{{duration}}" class="swiper"
             style="{{height?'height: ' + height:''}}" bindchange="swiperChange">
         <swiper-item wx:for="{{info}}" wx:key="index" class="swiper-item {{cur === index?'cur':''}}" data-item="{{item}}" bindtap="toTap">
-            <view class="ui-swiper-main radius">
+            <view class="ui-swiper-main radius-l">
                 <image src="{{item[imgName]}}" style="{{imgHeight?'height: '+imgHeight:''}}" class="image" mode="aspectFill"/>
             </view>
         </swiper-item>

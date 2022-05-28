@@ -200,9 +200,6 @@ Page({
 
     let that = this
     let tempalteId = 'JNwwF1m0rmbOt9v0lCi_RoUq_N7eg04tZLuWO2S-pjI'
-    // that.submitSign('', tempalteId, that).then((res) => {
-    //   console.info(res)
-    // })
     wx.requestSubscribeMessage({
       tmplIds: [tempalteId],
       success(res) {

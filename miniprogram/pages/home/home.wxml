@@ -2,11 +2,13 @@
 <ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
 
   <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}">
+
     <!-- 背景图 -->
     <view class="flex-bar p-3" wx:if="{{scrollTop > sys_navBar}}">
       <image src="/static/tab_icon/document_cur.png" mode="aspectFill" style="width: 60rpx;height: 54rpx;" />
       <text class="text-lg text-bold ml-2">小贝校招</text>
     </view>
+
     <!-- 上滑显示logo & 搜索框 -->
     <view class="p-3 flex-bar flex-sub" wx:if="{{scrollTop > sys_navBar}}">
       <view url="/pages/search/search" class="flex-sub flex-bar">
@@ -16,10 +18,12 @@
         </view>
       </view>
     </view>
+
     <!-- 空出右侧胶囊位置 -->
     <view class="flex-bar">
       <view style="{{'width:'+ (sys_capsule.width + 10)+'px; height:' + sys_capsule.height+'px'}}" />
     </view>
+
   </ui-navbar>
 
   <!-- 自定义swiper -->
@@ -39,10 +43,11 @@
           <ui-tag bg="bg-blue-thin" info="更多"></ui-tag>
         </view>
       </view>
+
       <!-- 两个图片 -->
       <view class="ui-grid ui-cols-2">
         <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
-          <ui-card ui="shadow m-3 radius" imgHeight="180rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
+          <ui-card ui="shadow m-3 radius-l" imgHeight="200rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
             <view slot="tag" class="ui-tag bg-mask-20 radius-lr">
               <view>
                 <text class="cicon-favorite mx-2" />{{item.like}}
@@ -53,9 +58,17 @@
         </view>
       </view>
       <!-- 单个图片 -->
-      <view class="ui-cards goods col-goods">
-        <view class="ui-item shadow" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
-          <image src="{{item.img}}" mode="aspectFill" />
+      <view class="ui-grid ui-cols-1">
+        <view class="ui-item mx-2" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
+          <ui-card ui="shadow radius-l my-3 mx-2" imgHeight="360rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}" fixedTitle>
+            <view slot="tag" class="ui-tag bg-mask-20 radius-lr text-right pr-2">
+              <view>
+                <text class="cicon-favorite mx-2" />{{item.like}}
+                <text class="cicon-comment mx-2" />{{item.comment}}
+              </view>
+            </view>
+          </ui-card>
+          <!-- <image src="{{item.img}}" mode="aspectFill" />
           <view class="content">
             <view class="flex-bar mt-1">
               <view class="text-cut text-lg text-bold">{{ item.title }}</view>
@@ -70,7 +83,7 @@
                 </view>
               </view>
             </view>
-          </view>
+          </view> -->
         </view>
       </view>
 

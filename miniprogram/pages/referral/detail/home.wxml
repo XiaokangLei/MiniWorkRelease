@@ -12,8 +12,8 @@
     </view>
 
     <block wx:for="{{info}}" wx:key="index">
-      <view class="p-3 my-3 ui-BG radius">
-        <view style="width: 650rpx;" class="py-3 text-cut">
+      <view class="mt-3 py-3 px-2 ui-BG radius-lg">
+        <view style="width: 650rpx;" class="py-2 text-cut">
           <text class="_icon-title text-blue"></text>
           <text class="text-bold">部门: </text>
           <text> {{item['部门'] || '-'}}</text>

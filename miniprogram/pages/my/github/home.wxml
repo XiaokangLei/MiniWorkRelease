@@ -1,7 +1,7 @@
 <!--pages/my/github/github.wxml-->
 <ui-sys loading="{{false}}" doc title="开源/待办">
 
-  <ui-menu ui="mt-5 radius-l text-lg mx-3">
+  <ui-menu ui="mt-4 radius-lg text-l mx-3">
 
     <ui-menu-item title="GitHub开源" icon="cicon-github" isAction data-value="https://github.com/XiaokangLei/MiniWorkRelease.git" bindtap="tapCopy">
       <text slot="action">复制地址 <text class="_icon-copy-o text-blue"></text></text>
