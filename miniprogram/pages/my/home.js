@@ -10,10 +10,133 @@ Page({
     signedDays: 0, //连续签到天数
     signed: 0,
     signedRightCount: 0,
+    showVIPModal: false,
   },
   onShow: async function () {
     await this.getMemberInfo()
   },
+
+  /**
+   * VIP申请
+   * @param {*} e 
+   */
+  clickVip: async function (e) {
+    let that = this
+    if (that.data.isVip) {
+      return;
+    }
+
+    app.checkUserInfo(function (userInfo, isLogin) {
+      if (!isLogin) {
+        that.setData({
+          showLogin: true
+        })
+      } else {
+        that.setData({
+          userInfo: userInfo
+        });
+      }
+    });
+
+    console.info(that.data.applyStatus)
+    if (that.data.applyStatus == 1) {
+      wx.showToast({
+        title: "已经申请，等待审核",
+        icon: "none",
+        duration: 3000
+      });
+      return;
+    }
+
+    that.setData({
+      showVIPModal: true
+    })
+  },
+
+  /**
+   * 正式提交
+   */
+  submitApplyVip: async function (accept, templateId, that) {
+    try {
+
+      wx.showLoading({
+        title: '提交中...',
+      })
+      console.info(app.globalData.userInfo)
+      let info = {
+        nickName: app.globalData.userInfo.nickName,
+        avatarUrl: app.globalData.userInfo.avatarUrl,
+        accept: accept,
+        templateId: templateId
+      }
+      let res = await api.applyVip(info)
+      console.info(res)
+      if (res.result) {
+        wx.showToast({
+          title: "申请成功，等待审批",
+          icon: "none",
+          duration: 3000
+        });
+        this.setData({
+          showVIPModal: false,
+          applyStatus: 1
+        })
+      } else {
+        wx.showToast({
+          title: "程序出错啦",
+          icon: "none",
+          duration: 3000
+        });
+      }
+
+      wx.hideLoading()
+    } catch (err) {
+      wx.showToast({
+        title: '程序有一点点小异常，操作失败啦',
+        icon: 'none',
+        duration: 1500
+      })
+      console.info(err)
+      wx.hideLoading()
+    }
+  },
+
+  /**
+   * 申请VIP
+   * @param {*} e 
+   */
+  applyVip: async function (e) {
+    let that = this
+    let tempalteId = 'mCInmCCR_RzdMDNvBN2ranJaTKX74-4BqP9w_R0IRKg'
+    wx.requestSubscribeMessage({
+      tmplIds: [tempalteId],
+      success(res) {
+        console.info(res)
+        that.submitApplyVip(res[tempalteId], tempalteId, that).then((res) => {
+          console.info(res)
+        })
+      },
+      fail(res) {
+        console.info(res)
+        wx.showToast({
+          title: '程序有一点点小异常，操作失败啦',
+          icon: 'none',
+          duration: 1500
+        })
+      }
+    })
+  },
+
+  /**
+   * 隐藏
+   * @param {}} e 
+   */
+  hideModal: async function (e) {
+    this.setData({
+      showVIPModal: false
+    })
+  },
+
   /**
    * 签到
    * @param {*} e 

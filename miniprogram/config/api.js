@@ -166,6 +166,20 @@ function addPoints(taskType, info) {
   })
 }
 
+/**
+ * 申请VIP
+ * @param {}}  
+ */
+function applyVip(info) {
+  return wx.cloud.callFunction({
+      name: 'memberService',
+      data: {
+          action: "applyVip",
+          info: info
+      }
+  })
+}
+
 
 module.exports = {
   GetDataByKind: GetDataByKind,
@@ -181,4 +195,5 @@ module.exports = {
   getShareDetailList: getShareDetailList,
   addShareDetail: addShareDetail,
   addPoints: addPoints,
+  applyVip: applyVip,
 }

@@ -26,9 +26,9 @@
       <view class="flex-sub m-2 bg-green-gradient radius point-task">
         补签
       </view>
-      <view class="flex-twice margin-xs">
+      <view class="flex-twice m-2">
         <view>忘记打卡</view>
-        <view class="text-sm text-green">200积分/次</view>
+        <view class="text-sm text-green pt-2">200积分/次</view>
       </view>
       <view class="flex-treble margin-xs text-right pr-4">
         <button class="ui-btn bg-green-thin round shadow" bindtap="clickForgetRight">立即兑换</button>
@@ -38,9 +38,9 @@
       <view class="flex-sub m-2 bg-green-gradient radius point-task">
         高亮
       </view>
-      <view class="flex-twice margin-xs">
+      <view class="flex-twice m-2">
         <view>昵称永久高亮</view>
-        <view class="text-sm text-green">10000积分/永久</view>
+        <view class="text-sm text-green pt-2">10000积分/永久</view>
       </view>
       <view class="flex-treble margin-xs text-right pr-4">
         <button bindtap="clickHighLight" class="ui-btn bg-orange-thin round shadow {{highLighted==1?'bg-grey-thin':'bg-green-thin'}}">
@@ -61,9 +61,9 @@
       <view class="flex-sub m-2 bg-orange-gradient radius point-task">
         50积分
       </view>
-      <view class="flex-twice margin-xs">
+      <view class="flex-twice m-2">
         <view>观看完整视频</view>
-        <view class="text-sm text-red">+50积分/次</view>
+        <view class="text-sm text-red pt-2">+50积分/次</view>
       </view>
       <view class="flex-treble margin-xs text-right pr-4">
         <button class="ui-btn bg-orange-thin round shadow" bindtap="loadInterstitialAd">立即观看</button>
@@ -73,9 +73,9 @@
       <view class="flex-sub m-2 bg-orange-gradient radius point-task">
         30积分
       </view>
-      <view class="flex-twice margin-xs">
+      <view class="flex-twice m-2">
         <view>今日签到</view>
-        <view class="text-sm text-red">最高+30积分/天</view>
+        <view class="text-sm text-red pt-2">最高+30积分/天</view>
       </view>
       <view class="flex-treble margin-xs text-right pr-4">
         <button bindtap="clickSigned" class="ui-btn bg-orange-thin round {{signed==1?'bg-grey-thin':'bg-orange-thin'}} shadow">
@@ -95,7 +95,7 @@
       <text class="text-red">100</text>
       积分
     </view>
-    <view class="flex solid-bottom padding justify-between pt-3">
+    <view class="flex solid-bottom p-2 justify-between pt-3">
       <view class="my-4 mx-2" wx:for="{{shareList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
         <ui-avatar ui="round xxl" bg="{{item.bgUrl}}" icon="{{item.icon}}" />
         <view class="text-center text-sm mt-3">{{item.nickName}}</view>
@@ -115,31 +115,31 @@
   </view>
 
   <!-- 积分说明窗口 -->
-  <!-- <view class="cu-modal {{showPointDescModal?'show':''}}">
+  <view class="cu-modal {{showPointDescModal?'show':''}}">
     <view class="cu-dialog">
       <view class="cu-bar bg-white justify-end">
         <view class="content">积分说明</view>
         <view class="action" bindtap="hidePointDesc">
-          <text class="cuIcon-close text-red"></text>
+          <text class="_icon-close text-red text-xl"></text>
         </view>
       </view>
-      <view class="padding-xl bg-white">
-        <view class="padding-sm text-xl text-black text-bold text-center">如何获取积分</view>
-        <view class="text-left">1、坚持签到，连续签到可获得相应的签到积分，最高30</view>
+      <view class="p-5 bg-white">
+        <view class="p-2 text-xl text-black text-bold text-center">如何获取积分</view>
+        <view class="text-left">1、坚持签到，连续签到可获得相应的签到积分，最高30积分</view>
         <view class="text-left">2、观看视频，每次可获得50积分</view>
         <view class="text-left">3、邀请好友，最高每天可得100积分</view>
-        <view class="padding-sm text-xl text-black text-bold text-center">积分的作用</view>
+        <view class="p-2 text-xl text-black text-bold text-center pt-5">积分的作用</view>
         <view class="text-left">1、评论列表中头像昵称高亮</view>
         <view class="text-left">2、兑换忘签到补签权益</view>
-        <view class="text-left">3、后续补充权益</view>
+        <view class="text-left">3、兑换简历、面试资料下载</view>
       </view>
       <view class="cu-bar bg-white">
-        <view class="action margin-0 flex-sub text-green solid-left" bindtap="hidePointDesc">
+        <view class="action flex-sub text-green text-xl solid-left" bindtap="hidePointDesc">
           我知道了
         </view>
       </view>
     </view>
-  </view> -->
+  </view>
   <!-- <template is="login" data="{{showLogin: showLogin}}"></template> -->
 
 </ui-sys>

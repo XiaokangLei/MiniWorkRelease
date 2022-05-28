@@ -34,11 +34,11 @@ App({
       });
       this.store.env = envId.envId
       console.log("this.store.env:", this.store.env)
-      var openid = wx.getStorageSync('openid');
-      if (openid) {
-        this.globalData.openid = openid
-        console.log("getStorageSync:", openid)
-      } else {
+      // var openid = wx.getStorageSync('openid');
+      // if (openid) {
+      //   this.globalData.openid = openid
+      //   console.log("getStorageSync:", openid)
+      // } else {
         wx.cloud.callFunction({
           name: 'login',
           data: {},
@@ -57,7 +57,7 @@ App({
             console.error('[云函数] [login] 调用失败', err)
           }
         })
-      }
+      // }
     }
 
     this.globalData = {};

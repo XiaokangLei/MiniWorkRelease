@@ -200,26 +200,26 @@ Page({
 
     let that = this
     let tempalteId = 'JNwwF1m0rmbOt9v0lCi_RoUq_N7eg04tZLuWO2S-pjI'
-    that.submitSign('', tempalteId, that).then((res) => {
-      console.info(res)
-    })
-    // wx.requestSubscribeMessage({
-    //   tmplIds: [tempalteId],
-    //   success(res) {
-    //     console.info(res)
-    //     that.submitSign(res[tempalteId], tempalteId, that).then((res) => {
-    //       console.info(res)
-    //     })
-    //   },
-    //   fail(res) {
-    //     console.info(res)
-    //     wx.showToast({
-    //       title: '程序有一点点小异常，操作失败啦',
-    //       icon: 'none',
-    //       duration: 1500
-    //     })
-    //   }
+    // that.submitSign('', tempalteId, that).then((res) => {
+    //   console.info(res)
     // })
+    wx.requestSubscribeMessage({
+      tmplIds: [tempalteId],
+      success(res) {
+        console.info(res)
+        that.submitSign(res[tempalteId], tempalteId, that).then((res) => {
+          console.info(res)
+        })
+      },
+      fail(res) {
+        console.info(res)
+        wx.showToast({
+          title: '程序有一点点小异常，操作失败啦',
+          icon: 'none',
+          duration: 1500
+        })
+      }
+    })
   },
 
   /**

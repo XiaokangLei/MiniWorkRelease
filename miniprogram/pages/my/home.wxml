@@ -1,13 +1,13 @@
 <ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
   <view class="ui-container" style="margin-top: {{sys_navBar}}px;">
-    <view class="flex-bar my-4 ml-2" bindtap="show">
-      <view data-url="/pages/demo/login/login" bindtap="tapToUrl">
+    <view class="flex-bar my-4 ml-2">
+      <view data-url="/pages/demo/login/login" bindtap="show" bindtap="tapToUrl">
         <ui-avatar ui="xxl round" src="/static/logo.png" />
       </view>
 
       <view class="flex-sub pl-3">
         <view class="text-xl ml-2" data-url="/pages/demo/login/login" bindtap="tapToUrl">登录,享受更多服务。</view>
-        <view data-url="/pages/demo/login/login" bindtap="tapToUrl">
+        <view bindtap="clickVip">
           <ui-tag class="text-sm" bg="bg-red-light" ui="sm" info="点击申请VIP " />
         </view>
       </view>
@@ -73,4 +73,28 @@
     </ui-menu>
 
   </view>
+  <!-- vip窗口 -->
+<view class="cu-modal {{showVIPModal?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">成为VIP说明</view>
+            <view class="action" bindtap="hideModal">
+                <text class="_icon-close text-red text-xl"></text>
+            </view>
+        </view>
+        <view class="p-4 pb-5 bg-white">
+            <view>申请条件：打赏过作者的用户即可申请</view>
+            <view class="pt-3">VIP权益：拥有VIP专属标签</view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub " bindtap="hideModal">取消</view>
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="showQrcode">
+                打赏
+            </view>
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="applyVip">
+                申请
+            </view>
+        </view>
+    </view>
+</view>
 </ui-sys>
