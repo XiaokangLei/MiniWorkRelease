@@ -417,13 +417,11 @@ async function addShareDetail(event) {
   if (shareInfos.data.length > 0) {
     return true;
   } else {
-
     try {
 
       let memberInfos = await db.collection('mini_member').where({
         openId: event.info.shareOpenId
       }).get();
-
       const tasks = []
       if (memberInfos.data.length === 0) {
         let task1 = db.collection('mini_member').add({

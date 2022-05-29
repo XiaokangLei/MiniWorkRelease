@@ -6,35 +6,24 @@ Page({
     scrollTop: 0,
     swiperList: [],
     list: [],
+    userInfo: {},
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    let that = this
+  onLoad: function (options) {
     //有openid跳授权计算积分
     if (options.openid) {
-      let shareOpenId = options.openid
-      app.checkUserInfo(function (userInfo, isLogin) {
-        if (!isLogin) {
-          that.setData({
-            showLogin: true
-          })
-        } else {
-          that.setData({
-            userInfo: userInfo
-          });
-        }
-      });
-
-      if (that.data.userInfo) {
+      app.getOpenId.then(obj => {
         let info = {
-          shareOpenId: shareOpenId,
-          nickName: app.globalData.userInfo.nickName,
-          avatarUrl: app.globalData.userInfo.avatarUrl
+          openId: obj.openId,
+          shareOpenId: options.openid,
+          nickName: obj.nickName,
+          avatarUrl: obj.avatarUrl
         }
-        await api.addShareDetail(info)
-      }
+        console.log(info)
+        api.addShareDetail(info)
+      })
     }
     // 获取首页数据
     api.GetDataByKind('mini-index-r', 'home').then(res => {
@@ -44,8 +33,14 @@ Page({
       })
     })
   },
-  
-  onShow() {
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+    return {
+      title: '小贝校招',
+    }
 
   },
   // 监听用户滑动页面事件。

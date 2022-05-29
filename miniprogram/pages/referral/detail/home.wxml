@@ -4,7 +4,7 @@
   <view class="ui-container">
     <view class="flex-bar mt-3 text-left">
       <view class="text-cut text-xxl text-bold">
-        <ui-avatar ui="radius sl" src="{{logo}}" />{{name}}
+        <ui-avatar ui="radius xl" src="{{logo}}" /> {{name}}
       </view>
       <!-- <view class="flex-bar" bindtap="bingMpTap">
         <text class="cicon-qr-code-line text-sl text-yellow"></text>

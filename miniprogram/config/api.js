@@ -172,11 +172,11 @@ function addPoints(taskType, info) {
  */
 function applyVip(info) {
   return wx.cloud.callFunction({
-      name: 'memberService',
-      data: {
-          action: "applyVip",
-          info: info
-      }
+    name: 'memberService',
+    data: {
+      action: "applyVip",
+      info: info
+    }
   })
 }
 

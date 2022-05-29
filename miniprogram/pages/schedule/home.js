@@ -58,6 +58,15 @@ Page({
       url: "/pages/schedule/datail/home?id=" + id + "&time=" + time + "&title=" + title + "&html=" + encodeURIComponent(html) + "&info=" + info + "&showstar=true"
     })
   },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+    return {
+      title: '校招倒计时',
+    }
+
+  },
   // 监听用户滑动页面事件。
   onPageScroll(e) {
     // 注意：请只在需要的时候才在 page 中定义此方法，不要定义空方法。以减少不必要的事件派发对渲染层-逻辑层通信的影响。

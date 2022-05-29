@@ -1,6 +1,7 @@
 <!--pages/my/about/home.wxml-->
 <ui-sys loading="{{false}}" doc title="关于">
   <view class="ui-container">
+
     <view class="text-center mt-2">
       <ui-avatar ui="round xl" src="/static/logo.png" />
       <view class="text-bold text-xl" style="margin-top: 32rpx;">
@@ -11,7 +12,7 @@
       </view>
     </view>
 
-    <view class="ui-BG radius-lg p-3 my-3 mx-1" data-value="text-justify">
+    <view class="ui-BG radius-l p-3 my-3 mx-1" data-value="text-justify">
       <view class="text-justify text-lg" style="line-height: 56rpx;">
         <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;小贝校招小程序是个人开发的一款开源小程序，主要提供常见的面试题、算法题、招聘信息、内推信息等资源的小程序。</text>
       </view>
@@ -26,18 +27,15 @@
       </view>
     </view>
 
-    <view class="ui-BG radius-lg p-3 my-3 mx-1 mt-5" data-value="text-justify">
+    <view class="ui-BG radius-l p-3 my-3 mx-1 mt-5" data-value="text-justify">
       <view class="text-justify text-bold text-xl text-center my-2" style="line-height: 36rpx;">
         致谢
       </view>
-      <view class="text-justify text-l mt-2" style="line-height: 36rpx;">
+      <view class="text-justify text-l mt-4" style="line-height: 36rpx;">
         <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;小程序UI：<text class="text-blue">MP-CU V3.x</text></text>
       </view>
       <view class="text-justify text-l mt-2" style="line-height: 36rpx;">
         <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;Markdown插件：<text class="text-blue">Towxml</text></text>
-      </view>
-      <view class="text-justify text-l mt-2" style="line-height: 36rpx;">
-        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;部分题目：<text class="text-blue">www.cyc2018.xyz</text></text>
       </view>
 
     </view>

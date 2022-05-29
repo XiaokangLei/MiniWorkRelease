@@ -6,7 +6,7 @@ export const colorUI = new ColorUI({
     main: 'blue',
     text: 1,
     footer: true,
-    share: true,
+    share: false,
     shareTitle: '小贝校招',
     homePath: '/pages/home/home',
     tabBar: [{

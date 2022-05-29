@@ -47,7 +47,7 @@
       <!-- 两个图片 -->
       <view class="ui-grid ui-cols-2">
         <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
-          <ui-card ui="shadow m-3 radius-l" imgHeight="200rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
+          <ui-card ui="shadow m-3 radius-l" imgHeight="160rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
             <view slot="tag" class="ui-tag bg-mask-20 radius-lr">
               <view>
                 <text class="cicon-favorite mx-2" />{{item.like}}

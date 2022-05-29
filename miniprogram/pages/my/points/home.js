@@ -202,13 +202,14 @@ Page({
   /**
    * 分享邀请
    */
-  onShareAppMessage: function () {
-    return {
-      title: '小贝校招',
-      imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
-      path: '/pages/home/home?openid=' + app.globalData.openid
-    }
-  },
+  // onShareAppMessage: function () {
+  //   console.log('/pages/home/home?openid=' + app.globalData.openid)
+  //   return {
+  //     title: '小贝校招',
+  //     imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
+  //     path: '/pages/home/home?openid=' + app.globalData.openid
+  //   }
+  // },
 
   /**
    * 初始化广告视频
@@ -296,13 +297,13 @@ Page({
   /**
    * 分享邀请
    */
-  onShareAppMessage: function () {
-    return {
-      title: '有内容的小程序',
-      imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
-      path: '/pages/index/index?openid=' + app.globalData.openid
-    }
-  },
+  // onShareAppMessage: function () {
+  //   return {
+  //     title: '有内容的小程序',
+  //     imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
+  //     path: '/pages/index/index?openid=' + app.globalData.openid
+  //   }
+  // },
 
   /**
    * 展示打赏二维码
@@ -461,6 +462,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    console.log('/pages/home/home?openid=' + app.globalData.openid)
+    return {
+      title: '小贝校招',
+      imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
+      path: '/pages/home/home?openid=' + app.globalData.openid
+    }
   }
 })

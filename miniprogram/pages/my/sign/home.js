@@ -234,8 +234,6 @@ Page({
         accept: accept,
         templateId: templateId
       }
-      console.log("-------------------------")
-      console.log(info)
       let result = await api.addSign(info)
       await that.afterCalendarRender()
       that.setData({
