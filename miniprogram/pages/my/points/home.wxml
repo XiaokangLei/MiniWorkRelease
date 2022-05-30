@@ -111,7 +111,7 @@
     </view>
     <view class="flex solid-bottom p-2 justify-between pt-3">
       <view class="my-4 mx-2" wx:for="{{shareList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
-        <ui-avatar ui="round xxl" bg="{{item.bgUrl}}" icon="{{item.icon}}" />
+        <ui-avatar ui="round xxl" bg="{{item.bgUrl}}" src="{{item.bgUrl}}" icon="{{item.icon}}" />
         <view class="text-center text-sm mt-3">{{item.nickName}}</view>
       </view>
     </view>

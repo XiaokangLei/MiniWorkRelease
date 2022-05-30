@@ -34,7 +34,6 @@ App({
         traceUser: true,
       });
       this.store.env = envId.envId
-      console.log("this.store.env:", this.store.env)
 
       this.getOpenId = (function (that) {
         return new Promise((resolve, reject) => {
@@ -52,7 +51,11 @@ App({
               wx.setStorageSync('avatarUrl', res.result.avatarUrl);
               wx.setStorageSync('nickName', res.result.nickName);
               console.log('[云函数] [login] 调用成功:', res.result.openId, res.result.userId, res.result.avatarUrl, res.result.nickName)
-              resolve({openId:res.result.openId,avatarUrl:res.result.avatarUrl,nickName:res.result.nickName})
+              resolve({
+                openId: res.result.openId,
+                avatarUrl: res.result.avatarUrl,
+                nickName: res.result.nickName
+              })
             },
             fail: err => {
               console.error('[云函数] [login] 调用失败', err)
@@ -60,35 +63,6 @@ App({
           })
         })
       })(this)
-
-      
-      // var openid = wx.getStorageSync('openid');
-      // if (openid) {
-      //   this.globalData.openid = openid
-      //   console.log("getStorageSync:", openid)
-      // } else {
-      // wx.cloud.callFunction({
-      //   name: 'login',
-      //   data: {},
-      //   success: res => {
-      //     this.globalData.openid = res.result.openId
-      //     this.globalData.userId = res.result.userId
-      //     this.globalData.avatarUrl = res.result.avatarUrl
-      //     this.globalData.nickName = res.result.nickName
-      //     wx.setStorageSync('openid', res.result.openId);
-      //     wx.setStorageSync('userId', res.result.userId);
-      //     wx.setStorageSync('avatarUrl', res.result.avatarUrl);
-      //     wx.setStorageSync('nickName', res.result.nickName);
-      //     console.log('[云函数] [login] 调用成功:', res.result.openId, res.result.userId, res.result.avatarUrl, res.result.nickName)
-      //     if (this.openidCallback) {
-      //       this.openidCallback(openid);
-      //     }
-      //   },
-      //   fail: err => {
-      //     console.error('[云函数] [login] 调用失败', err)
-      //   }
-      // })
-      // }
     }
 
     this.globalData = {};

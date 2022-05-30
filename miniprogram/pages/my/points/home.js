@@ -98,7 +98,7 @@ Page({
       let i = 0
       shareList.data.forEach(item => {
         defaultShareList[i].nickName = item.nickName
-        defaultShareList[i].bgUrl = ""
+        defaultShareList[i].bgUrl = item.avatarUrl
         defaultShareList[i].icon = ""
         defaultShareList[i].style = "background-image:url(" + item.avatarUrl + ");"
         i++
@@ -198,18 +198,6 @@ Page({
       showPointDescModal: false
     })
   },
-
-  /**
-   * 分享邀请
-   */
-  // onShareAppMessage: function () {
-  //   console.log('/pages/home/home?openid=' + app.globalData.openid)
-  //   return {
-  //     title: '小贝校招',
-  //     imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
-  //     path: '/pages/home/home?openid=' + app.globalData.openid
-  //   }
-  // },
 
   /**
    * 初始化广告视频
