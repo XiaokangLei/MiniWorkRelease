@@ -31,37 +31,27 @@
 
 ## 部分效果预览
 
-<div style="display:flex;width:33%" align="center"> 
+<div style="display:flex;" align="center"> 
   <img src="./img/001.jpg" width="350px"> 
-  <img src="./img/002.jpg" width="350px">
-  <img src="./img/003.jpg" width="350px">
 </div>
 <br>
 
-<div style="display:flex;width:33%" align="center"> 
+<div style="display:flex;" align="center"> 
   <img src="./img/004.jpg" width="350px"> 
-  <img src="./img/005.jpg" width="350px">
-  <img src="./img/006.jpg" width="350px">
 </div>
 <br>
 
-<div style="display:flex;width:33%" align="center"> 
+<div style="display:flex;" align="center"> 
   <img src="./img/007.jpg" width="350px"> 
-  <img src="./img/008.jpg" width="350px">
-  <img src="./img/009.jpg" width="350px">
 </div>
 <br>
 
-<div style="display:flex;width:33%" align="center"> 
+<div style="display:flex;" align="center"> 
   <img src="./img/010.jpg" width="350px"> 
-  <img src="./img/011.jpg" width="350px">
-  <img src="./img/012.jpg" width="350px">
 </div>
 <br>
 
-<div style="display:flex;width:33%" align="center"> 
+<div style="display:flex;" align="center"> 
   <img src="./img/013.jpg" width="350px"> 
-  <img src="./img/014.jpg" width="350px">
-  <img src="./img/015.jpg" width="350px">
 </div>
 <br>
