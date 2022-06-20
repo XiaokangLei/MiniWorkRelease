@@ -4,15 +4,13 @@ import api from "../../config/api.js"
 Page({
   data: {
     scrollTop: 0,
-    loading: true,
     navData: []
   },
   onLoad() {
     // 获取首页数据
     api.GetDataByTitle('mini-navData', 'index-r').then(res => {
       this.setData({
-        navData: res.data[0].sub,
-        loading: false
+        navData: res.data[0].sub
       })
     })
   },

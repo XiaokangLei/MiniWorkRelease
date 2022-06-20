@@ -1,5 +1,5 @@
 <!-- 自定义tabbar -->
-<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+<ui-sys img="/static/img/4put2.png" tabbar>
 
   <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}">
 

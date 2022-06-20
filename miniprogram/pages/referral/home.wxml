@@ -1,4 +1,4 @@
-<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+<ui-sys img="/static/img/4put2.png" tabbar>
   <!-- 向下滑动显示顶部搜索 -->
   <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}" placeholder="{{false}}">
     <view class="flex-bar p-3" wx:if="{{scrollTop > sys_navBar}}">
@@ -31,18 +31,14 @@
       </view>
     </view>
   </view>
-  <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
-    <ui-loading color isSlot>
-      <text class="text-lg text-blue">Loading..</text>
-    </ui-loading>
-  </view>
+
   <!-- 内推信息 -->
   <view class="ui-container">
     <ui-title title="热门内推" depth="2" isIcon ui="ml-3" />
     <view class="ui-cards goods col-goods">
       <view class="ui-item shadow radius-l" wx:for="{{list}}" wx:key="index" data-info="{{item.each}}" data-logo="{{item.logo}}" data-company="{{item.name}}" data-comment="{{item.comment}}" bindtap="toProductDetail">
         <!-- <image src="{{item.cover}}" lazy-load="true" class="image" mode="aspectFill" /> -->
-        <ui-img ui="radius" src="{{item.cover}}" height="320rpx" current="{{index}}"/>
+        <ui-img ui="radius" src="{{item.cover}}" height="320rpx" current="{{index}}" />
         <view class="content">
           <view class="flex-bar">
             <view class="text-cut text-xl text-bold">{{ item.name }}</view>

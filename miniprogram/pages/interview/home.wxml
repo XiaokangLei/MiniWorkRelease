@@ -1,4 +1,4 @@
-<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+<ui-sys img="/static/img/4put2.png" tabbar>
   <ui-navbar back="{{false}}" isSlot opacity scrollTop="{{scrollTop}}" placeholder="{{false}}">
     <view class="flex-bar p-3" wx:if="{{scrollTop > sys_navBar}}">
       <image src="/static/tab_icon/test_cur.png" mode="aspectFill" style="width: 60rpx;height: 54rpx;" />
@@ -31,11 +31,7 @@
       </view>
     </view>
   </view>
-  <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
-    <ui-loading color isSlot>
-      <text class="text-lg text-blue">Loading..</text>
-    </ui-loading>
-  </view>
+
   <!-- 题目列表 -->
   <view class="ui-container">
     <block wx:for="{{navData}}" wx:for-item="nav" wx:key="index">

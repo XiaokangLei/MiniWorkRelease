@@ -1,4 +1,4 @@
-<ui-sys img="/static/img/4put2.png" tabbar loading="{{false}}">
+<ui-sys img="/static/img/4put2.png" tabbar>
   <!-- <view class="ui-container" style="margin-top: {{sys_navBar}}px;"> -->
   <view class="flex-bar my-4 ml-2 mt-6">
     <view class="mt-5 ml-2" data-url="/pages/demo/login/login" bindtap="show" bindtap="tapToUrl">
