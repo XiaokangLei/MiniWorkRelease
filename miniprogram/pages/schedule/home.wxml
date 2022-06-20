@@ -19,7 +19,7 @@
   </ui-navbar>
 
   <!-- 校招日程TOP信息 -->
-  <view class="page-card-box" style="margin-top: {{sys_navBar+0.1*sys_capsule.height}}px;">
+  <view class="page-card-box" style="margin-top: {{sys_navBar}}px;">
     <view class="bg-mauve-gradient shadow-blur page-card-view">
       <view class="left-view">
         <view class="text-bold text-xl">校招日历</view>
@@ -33,9 +33,8 @@
   </view>
 
   <!-- 校招日程列表 -->
-  <!-- <view class="ui-container"> -->
-    <view class="py-3 text-center">
-      <ui-tab tab="{{['校招倒计时', '热门校招', '校园宣讲会']}}" value="{{tabValue}}" tpl="trapezoid" align="flex-bar" bind:change="tabNavChange" />
+    <view class="pb-2 text-center">
+      <ui-tab tab="{{['热门校招', '校招倒计时', '校园宣讲会']}}" value="{{tabValue}}" tpl="trapezoid" align="flex-bar" bind:change="tabNavChange" />
     </view>
 
     <view class="page-card-box-new mt-2 mx-3" wx:for="{{tabValue==0?listhot:tabValue==1?list:listteachin}}" wx:key="item">

@@ -47,30 +47,17 @@
       <!-- 两个图片 -->
       <view class="ui-grid ui-cols-2">
         <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
-          <ui-card ui="shadow m-3 radius" imgHeight="180rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
-            <view slot="tag" class="ui-tag bg-mask-20 radius-lr">
-              <view>
-                <text class="cicon-favorite mx-2" />{{item.like}}
-                <text class="cicon-comment mx-2" />{{item.comment}}
-              </view>
-            </view>
+          <ui-card ui="shadow my-1 m-3 radius-l" imgHeight="200rpx" img="{{item.img}}" title="" isTag="{{true}}" fixedTitle>
           </ui-card>
         </view>
       </view>
       <!-- 单个图片 -->
-      <view class="ui-grid ui-cols-1">
-        <view class="ui-item mx-2" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
-          <ui-card ui="shadow radius-l my-3 mx-2" imgHeight="360rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}" fixedTitle>
-            <view slot="tag" class="ui-tag bg-mask-20 radius-lr text-right pr-2">
-              <view>
-                <text class="cicon-favorite mx-2" />{{item.like}}
-                <text class="cicon-comment mx-2" />{{item.comment}}
-              </view>
-            </view>
+      <view class="ui-grid ui-cols-2">
+        <view class="ui-item" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
+          <ui-card ui="shadow my-1 mx-3 radius-l" imgHeight="200rpx" img="{{item.img}}" title="" isTag="{{true}}" fixedTitle>
           </ui-card>
         </view>
       </view>
-
     </block>
 
   </view>

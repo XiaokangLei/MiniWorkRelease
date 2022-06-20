@@ -8,10 +8,10 @@
     <!-- 内容 -->
     <view class="ui-grid ui-cols-2">
       <view class="ui-item p-3" wx:for="{{salary}}" wx:key="index">
-        <view class="bg-{{item.color}}-light shadow test-doc-card" data-mk='{{item.title}}' bindtap="toMarkdown">
+        <view class="bg-{{item.color}}-gradient shadow test-doc-card" data-mk='{{item.title}}' bindtap="toMarkdown">
           <view class="content">
-            <view class="text-bold text-xl title">{{item.title}}</view>
-            <view class="text-sm name">{{item.time}}</view>
+            <view class="text-bold text-lg title">{{item.title}}</view>
+            <view class="text-sm name _icon-loading"> {{item.time}}</view>
           </view>
         </view>
       </view>
