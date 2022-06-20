@@ -75,6 +75,21 @@
     <ui-menu-item arrow title="系统设置" icon="cicon-set text-cyan" data-url="/pages/my/set/home" bindtap="tapToUrl" />
     <ui-menu-item arrow title="关于" icon="cicon-info text-yellow" data-url="/pages/my/about/home" bindtap="tapToUrl" />
   </ui-menu>
+  <view class="mt-4">
+    <ui-title title="友情链接" depth="2" tpl="center-column" ui="ml-3" hasDot />
+    <view class="ui-grid ui-cols-1 ui-cols-lg-6 p-3 ui-BG">
+      <view class="ui-item mt-2 pb-2">
+        <view class="text-center">
+          <navigator target="miniProgram" open-type="navigate" app-id="wx6eddb828c69ece94" path="pages/home/home" version="release">
+            <view>
+              <view class="cicon-event-list text-pink text-center text-xxxl"></view>
+              <view class="text-center pt-1">计算机学术论文助手</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
 
   <!-- vip窗口 -->
   <view class="cu-modal {{showVIPModal?'show':''}}">

@@ -40,7 +40,8 @@
       "sass"
     ],
     "minifyWXML": true,
-    "useStaticServer": true
+    "useStaticServer": true,
+    "ignoreUploadUnusedFiles": true
   },
   "appid": "wx6526ac9f2471a0b9",
   "projectname": "quickstart-wx-cloud",

@@ -47,7 +47,7 @@
       <!-- 两个图片 -->
       <view class="ui-grid ui-cols-2">
         <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
-          <ui-card ui="shadow m-3 radius-l" imgHeight="180rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
+          <ui-card ui="shadow m-3 radius" imgHeight="180rpx" img="{{item.img}}" title="{{item.title}}" isTag="{{true}}">
             <view slot="tag" class="ui-tag bg-mask-20 radius-lr">
               <view>
                 <text class="cicon-favorite mx-2" />{{item.like}}
@@ -68,22 +68,6 @@
               </view>
             </view>
           </ui-card>
-          <!-- <image src="{{item.img}}" mode="aspectFill" />
-          <view class="content">
-            <view class="flex-bar mt-1">
-              <view class="text-cut text-lg text-bold">{{ item.title }}</view>
-              <view class="flex-bar ui-TC-3">
-                <view class="flex-bar mx-3">
-                  <text class="cicon-favorite mx-2" />
-                  <text>{{ item.like }}</text>
-                </view>
-                <view class="flex-bar mx-3">
-                  <text class="cicon-comment mx-2" />
-                  <text>{{ item.comment }}</text>
-                </view>
-              </view>
-            </view>
-          </view> -->
         </view>
       </view>
 

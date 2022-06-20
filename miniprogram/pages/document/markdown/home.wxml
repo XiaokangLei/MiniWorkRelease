@@ -1,7 +1,7 @@
 <!--pages/document/markdown/home.wxml-->
 <ui-sys doc title="{{title}}">
   <view class="ui-container">
-
+    <ui-title title="{{title}}" titleColor="text-blue" descUi="text-cyan" desc="{{time}}" tpl="center-column" hasLine/>
     <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
       <ui-loading color isSlot>
         <text class="text-lg text-blue">Loading..</text>

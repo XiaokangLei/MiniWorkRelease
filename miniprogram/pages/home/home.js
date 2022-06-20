@@ -21,7 +21,6 @@ Page({
           nickName: obj.nickName,
           avatarUrl: obj.avatarUrl
         }
-        console.log(info)
         api.addShareDetail(info)
       })
     }

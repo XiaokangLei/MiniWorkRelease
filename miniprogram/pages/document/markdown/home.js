@@ -1,5 +1,6 @@
 // pages/document/markdown/home.js
 import api from "../../../config/api.js"
+import timeFormat from "../../../config/time.js"
 const app = getApp()
 
 Page({
@@ -10,6 +11,7 @@ Page({
   data: {
     title: "Loading...",
     loading: true,
+    time: "",
     markdown: {}
   },
 
@@ -23,7 +25,8 @@ Page({
           theme: wx.getSystemInfoSync().theme
         }),
         loading: false,
-        title: options.mk
+        title: options.mk,
+        time: timeFormat.formatTime(res.data[0]._updateTime)
       })
     })
   },

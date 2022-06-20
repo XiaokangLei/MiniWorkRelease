@@ -124,6 +124,19 @@ function addSign(info) {
 }
 
 /**
+ * 补签
+ */
+function addSignAgain(info) {
+  return wx.cloud.callFunction({
+    name: 'memberService',
+    data: {
+      action: "addSignAgain",
+      info: info
+    }
+  })
+}
+
+/**
  * 获取分享明细
  * @param {} openId 
  * @param {*} date 
@@ -196,4 +209,5 @@ module.exports = {
   addShareDetail: addShareDetail,
   addPoints: addPoints,
   applyVip: applyVip,
+  addSignAgain: addSignAgain,
 }

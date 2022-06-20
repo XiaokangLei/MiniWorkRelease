@@ -26,23 +26,23 @@ Page({
     highLightBtnTxt: "立即兑换",
     shareList: [{
       nickName: "待邀请",
-      bgUrl: "bg-gery",
+      bgUrl: "",
       icon: "cicon-person-add-o",
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gery",
+      bgUrl: "",
       icon: "cicon-person-add-o"
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gery",
+      bgUrl: "",
       icon: "cicon-person-add-o"
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gery",
+      bgUrl: "",
       icon: "cicon-person-add-o"
     }, {
       nickName: "待邀请",
-      bgUrl: "bg-gery",
+      bgUrl: "",
       icon: "cicon-person-add-o"
     }]
   },
@@ -91,9 +91,10 @@ Page({
     //   that.loadInterstitialAd(advert.taskVideoId);
     // }
 
-    let shareList = await api.getShareDetailList(app.globalData.openid, util.formatTime(new Date()))
+    let shareList = await api.getShareDetailList(app.globalData.openid)
+    // let shareList = await api.getShareDetailList(app.globalData.openid, util.formatTime(new Date()))
     let defaultShareList = that.data.shareList
-    console.info(shareList)
+    console.info("shareList:",shareList)
     if (shareList.data.length > 0) {
       let i = 0
       shareList.data.forEach(item => {
@@ -450,7 +451,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-    console.log('/pages/home/home?openid=' + app.globalData.openid)
     return {
       title: '小贝校招',
       imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
