@@ -225,10 +225,10 @@ Page({
    * 展示打赏二维码
    * @param {} e 
    */
-  showQrcode: async function (e) {
-    wx.previewImage({
-      urls: [config.moneyUrl],
-      current: config.moneyUrl
-    })
-  },
+  // showQrcode: async function (e) {
+  //   wx.previewImage({
+  //     urls: [config.moneyUrl],
+  //     current: config.moneyUrl
+  //   })
+  // },
 })

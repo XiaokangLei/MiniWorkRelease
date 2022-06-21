@@ -67,7 +67,7 @@
     <ui-menu-item arrow title="开源/待办" icon="cicon-github text-orange" data-url="/pages/my/github/home" bindtap="tapToUrl" />
     <ui-menu-item arrow title="联系/咨询" icon="cicon-chat-smiles text-green" data-url="/pages/my/chat/home" bindtap="tapToUrl" />
     <ui-menu-item arrow title="资源下载" icon="cicon-cloud-download text-blue" data-url="/pages/my/resource/home" bindtap="tapToUrl" />
-    <ui-menu-item arrow title="打赏支持" icon="cicon-redpacket text-red" bindtap="showQrcode" />
+    <!-- <ui-menu-item arrow title="打赏支持" icon="cicon-redpacket text-red" bindtap="showQrcode" /> -->
   </ui-menu>
 
   <ui-menu ui="mt-3 text-l">

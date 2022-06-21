@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    loading: true,
     company: []
   },
 
@@ -17,8 +16,7 @@ Page({
   onLoad(options) {
     api.GetDataByTitle('mini-navData', 'company').then(res => {
       this.setData({
-        company: res.data[0].sub,
-        loading: false
+        company: res.data[0].sub
       })
     })
   },

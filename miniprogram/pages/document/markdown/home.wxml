@@ -2,14 +2,12 @@
 <ui-sys doc title="{{title}}">
   <view class="ui-container">
     <!-- <ui-title title="{{title}}" titleColor="text-blue" descUi="text-cyan" desc="{{time}}" tpl="center-column" hasLine/> -->
-    <view class="flex-center" style="padding-top: 60%" wx:if="{{loading}}">
-      <ui-loading color isSlot>
-        <text class="text-lg text-blue">Loading..</text>
-      </ui-loading>
-    </view>
 
-    <view class="mt-3">
+    <view class="mt-3" wx:if="{{markdown.length > 0}}">
       <towxml nodes="{{markdown}}" />
+    </view>
+    <view class="mt-3" wx:else>
+      <ui-title title="暂无数据" titleColor="text-blue" tpl="center-column" hasLine/>
     </view>
 
   </view>
