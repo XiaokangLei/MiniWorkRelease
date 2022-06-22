@@ -2,13 +2,11 @@
 import {
   colorUI
 } from './config/ColorUI'
-// import { colorUISdk } from './config/mp-sdk'
 import envId from "/config/config.js"
 
 App({
   colorUI, //挂载到app上
   towxml: require('/towxml/index'), // 引入`towxml3.0`解析方法
-  // colorUISdk,
   store: {
     StatusBar: null,
     Custom: null,
@@ -41,16 +39,17 @@ App({
             name: 'login',
             data: {},
             success: res => {
-              // that.globalData.openid = res.result.openid
               that.globalData.openid = res.result.openId
               that.globalData.userId = res.result.userId
               that.globalData.avatarUrl = res.result.avatarUrl
               that.globalData.nickName = res.result.nickName
+              // admin为开启管理员及部分其他功能的钥匙
+              that.globalData.admin = res.result.admin
               wx.setStorageSync('openid', res.result.openId);
               wx.setStorageSync('userId', res.result.userId);
               wx.setStorageSync('avatarUrl', res.result.avatarUrl);
               wx.setStorageSync('nickName', res.result.nickName);
-              console.log('[云函数] [login] 调用成功:', res.result.openId, res.result.userId, res.result.avatarUrl, res.result.nickName)
+              console.log('[云函数] [login] 调用成功:', res.result.openId, res.result.userId, res.result.avatarUrl, res.result.nickName, that.globalData.admin)
               resolve({
                 openId: res.result.openId,
                 avatarUrl: res.result.avatarUrl,

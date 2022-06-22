@@ -12,7 +12,16 @@ Page({
     title: "Loading...",
     time: "",
     markdown: {},
-    nodata: false
+    nodata: false,
+    topType: 3,
+    isShow: true,
+    bgVal: 'bg-orange-thin',
+    iconVal: '',
+    msgVal: '表格、代码向左滑动可查看全部内容',
+    alignVal: 'center',
+    isMask: false,
+    maskBgVal: '',
+    duration: 2000,
   },
 
   /**

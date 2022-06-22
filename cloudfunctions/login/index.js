@@ -15,9 +15,17 @@ exports.main = async (event, context) => {
       _openid: openId
     })
     .get()
+    const resultAdmin = await db
+    .collection('mini-admin')
+    .where({
+      name: "admin"
+    })
+    .get()
   const idData = result.data[0]
+  const idDataAdmin = resultAdmin.data[0]
   var avatarUrl = ""
   var nickName = ""
+  var admin = false
   if (result.data.length < 1) {
     avatarUrl = "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0"
     nickName = "微信用户"
@@ -38,12 +46,14 @@ exports.main = async (event, context) => {
     avatarUrl = idData.avatarUrl
     nickName = idData.nickName
   }
+  admin = idDataAdmin.show_comment
 
 
   return {
     userId: idData && idData._id && idData._openid ? idData._id : null,
     openId: openId,
     avatarUrl: avatarUrl,
-    nickName: nickName
+    nickName: nickName,
+    admin: admin
   }
 }

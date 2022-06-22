@@ -15,7 +15,7 @@ Page({
     sc_show: false,
     dz_show: false,
     showstar: "true",
-    placeholder: "",
+    placeholder: "评论/内推...",
     commentContent: "",
     commentPage: 1,
     commentList: [],
@@ -25,6 +25,7 @@ Page({
     // 用户头像，默认为改图片
     avatarUrl: "https://s1.ax1x.com/2020/07/28/aAdel6.jpg",
     nickName: "匿名用户",
+    isAdmin: false
   },
 
   /**
@@ -43,7 +44,8 @@ Page({
       title: options.title,
       time: time,
       id: options.id,
-      showstar: options.showstar
+      showstar: options.showstar,
+      isAdmin: app.globalData.admin
     })
     let info = this.data.info
     info["html"] = decodeURIComponent(options.html)

@@ -23,35 +23,11 @@
     <towxml nodes="{{html}}" />
   </view>
 
-  <view class="flex-center" wx:if="{{showstar=='true'}}">
-    <!-- 收藏/取消 -->
-    <!-- <view class="px-6">
-      <view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
-        <text class="cicon-star text-orange text-sl" />
-      </view>
-      <view bindtap="statr_sc" data-id="collect" wx:else>
-        <text class="cicon-star-o text-grey text-sl" />
-      </view>
-    </view> -->
-
-    <!-- 点赞/取消 -->
-    <!-- <view class="px-6">
-      <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
-        <text class="cicon-thumb-up-line text-orange text-sl" />
-      </view>
-      <view style="margin-right: -10rpx;" bindtap="statr_sc" data-id="statr" wx:else>
-        <text class="cicon-thumb-up-line-o text-grey text-sl" />
-      </view>
-    </view> -->
-  </view>
-
-  <view class="dbu ui-BG">
-    <!-- 评论 -->
+  <view class="dbu ui-BG" wx:if="{{isAdmin}}">
     <view class="search-form search-round search-index" maxlength="300" cursor-spacing="10" data-id="{{xw_list._id}}" data-url="user/note/add_note/index">
       <text class="cuIcon-write text-bold text-lg bg-grey light"> </text>
       <input bindinput='commentInput' confirm-type="send" bindfocus="onInputFocus" name="inputComment" value="{{commentContent}}" placeholder-style="color:#39b54a" placeholder="{{placeholder}}" focus="{{focus}}" bindblur="onReplyBlur" />
     </view>
-    <!-- 收藏/取消 -->
     <view class="mr-3">
       <view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
         <text class="cicon-star text-orange text-sl" />
@@ -61,31 +37,48 @@
       </view>
     </view>
     <view class="mr-4">
-    <!-- 点赞/取消 -->
-    <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
-      <text class="cicon-thumb-up-line text-orange text-sl" />
+      <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
+        <text class="cicon-thumb-up-line text-orange text-sl" />
+      </view>
+      <view class="mr-1" bindtap="statr_sc" data-id="statr" wx:else>
+        <text class="cicon-thumb-up-line-o text-grey text-sl" />
+      </view>
     </view>
-    <view class="mr-1" bindtap="statr_sc" data-id="statr" wx:else>
-      <text class="cicon-thumb-up-line-o text-grey text-sl" />
-    </view>
-  </view>
 
-    <!-- 发送评论 -->
     <button class='cu-btn bg-blue-gradient shadow-blur mr-4 mt-2' bindtap="submitCommend" wx:if="{{isFocus}}">发送</button>
-    <!-- <button class="ui-btn bg-blue-gradient mr-4" bindtap="submitCommend" wx:if="{{isFocus}}">发送</button> -->
   </view>
 
-	<!-- 评论列表 -->
-	<view class="mt-2 ui-BG" id="the_id">
-		<!-- 评论数 -->
-		<!-- <view class="cu-bar ui-BG">
+  <view class="dbu ui-BG flex-center" wx:if="{{showstar=='true' && !isAdmin}}">
+    <!-- 收藏/取消 -->
+    <view class="">
+      <view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
+        <text class="cicon-star text-orange text-sl" />
+      </view>
+      <view bindtap="statr_sc" data-id="collect" wx:else>
+        <text class="cicon-star-o text-grey text-sl" />
+      </view>
+    </view>
+
+    <!-- 点赞/取消 -->
+    <view class="px-6">
+      <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
+        <text class="cicon-thumb-up-line text-orange text-sl" />
+      </view>
+      <view style="margin-right: -10rpx;" bindtap="statr_sc" data-id="statr" wx:else>
+        <text class="cicon-thumb-up-line-o text-grey text-sl" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 列表 -->
+  <!-- <view class="mt-2 ui-BG" id="the_id">
+		<view class="cu-bar ui-BG">
 			<view class='action'>
 				<text class='cuIcon-titles text-orange '></text>
 				共{{xw_list.totalComments||0}}条评论
 			</view>
-		</view> -->
-		<!-- 评论内容 -->
-		<!-- <van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
+		</view>
+		<van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
 		<view class="cu-list menu menu-avatar comment solids-top">
 			<view class="cu-item" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item"
 				data-idx="{{idx}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
@@ -122,8 +115,8 @@
 					</view>
 				</view>
 			</view>
-		</view> -->
+		</view>
 		<view style="padding:50rpx"></view>
-	</view>
+	</view> -->
 
 </ui-sys>

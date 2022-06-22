@@ -11,7 +11,20 @@ Page({
     signed: 0,
     signedRightCount: 0,
     showVIPModal: false,
+    isAdmin: false
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+    this.setData({
+      isAdmin: app.globalData.admin
+    })
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
   onShow: async function () {
     await this.getMemberInfo()
   },
@@ -225,10 +238,10 @@ Page({
    * 展示打赏二维码
    * @param {} e 
    */
-  // showQrcode: async function (e) {
-  //   wx.previewImage({
-  //     urls: [config.moneyUrl],
-  //     current: config.moneyUrl
-  //   })
-  // },
+  showQrcode: async function (e) {
+    wx.previewImage({
+      urls: [config.moneyUrl],
+      current: config.moneyUrl
+    })
+  },
 })
