@@ -27,12 +27,12 @@
       </view>
     </view>
 
-    <view class="ui-BG radius-l p-3 my-3 mx-1 mt-5" data-value="text-justify">
+    <!-- <view class="ui-BG radius-l p-3 my-3 mx-1 mt-5" data-value="text-justify">
       <view class="text-justify text-bold text-xl text-center my-2" style="line-height: 36rpx;">
         支持
       </view>
       <ui-img preview ui="radius" src="{{moneyUrl}}" height="640rpx"/>
-    </view>
+    </view> -->
 
     <view class="ui-BG radius-l p-3 my-3 mx-1 mt-5" data-value="text-justify">
       <view class="text-justify text-bold text-xl text-center my-2" style="line-height: 36rpx;">

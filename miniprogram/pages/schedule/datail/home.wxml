@@ -25,7 +25,34 @@
 
   <view class="flex-center" wx:if="{{showstar=='true'}}">
     <!-- 收藏/取消 -->
-    <view class="px-6">
+    <!-- <view class="px-6">
+      <view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
+        <text class="cicon-star text-orange text-sl" />
+      </view>
+      <view bindtap="statr_sc" data-id="collect" wx:else>
+        <text class="cicon-star-o text-grey text-sl" />
+      </view>
+    </view> -->
+
+    <!-- 点赞/取消 -->
+    <!-- <view class="px-6">
+      <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
+        <text class="cicon-thumb-up-line text-orange text-sl" />
+      </view>
+      <view style="margin-right: -10rpx;" bindtap="statr_sc" data-id="statr" wx:else>
+        <text class="cicon-thumb-up-line-o text-grey text-sl" />
+      </view>
+    </view> -->
+  </view>
+
+  <view class="dbu ui-BG">
+    <!-- 评论 -->
+    <view class="search-form search-round search-index" maxlength="300" cursor-spacing="10" data-id="{{xw_list._id}}" data-url="user/note/add_note/index">
+      <text class="cuIcon-write text-bold text-lg bg-grey light"> </text>
+      <input bindinput='commentInput' confirm-type="send" bindfocus="onInputFocus" name="inputComment" value="{{commentContent}}" placeholder-style="color:#39b54a" placeholder="{{placeholder}}" focus="{{focus}}" bindblur="onReplyBlur" />
+    </view>
+    <!-- 收藏/取消 -->
+    <view class="mr-3">
       <view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
         <text class="cicon-star text-orange text-sl" />
       </view>
@@ -33,17 +60,70 @@
         <text class="cicon-star-o text-grey text-sl" />
       </view>
     </view>
-
+    <view class="mr-4">
     <!-- 点赞/取消 -->
-    <view class="px-6">
-      <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
-        <text class="cicon-thumb-up-line text-orange text-sl" />
-      </view>
-      <view style="margin-right: -10rpx;" bindtap="statr_sc" data-id="statr" wx:else>
-        <text class="cicon-thumb-up-line-o text-grey text-sl" />
-      </view>
+    <view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
+      <text class="cicon-thumb-up-line text-orange text-sl" />
+    </view>
+    <view class="mr-1" bindtap="statr_sc" data-id="statr" wx:else>
+      <text class="cicon-thumb-up-line-o text-grey text-sl" />
     </view>
   </view>
 
+    <!-- 发送评论 -->
+    <button class='cu-btn bg-blue-gradient shadow-blur mr-4 mt-2' bindtap="submitCommend" wx:if="{{isFocus}}">发送</button>
+    <!-- <button class="ui-btn bg-blue-gradient mr-4" bindtap="submitCommend" wx:if="{{isFocus}}">发送</button> -->
+  </view>
+
+	<!-- 评论列表 -->
+	<view class="mt-2 ui-BG" id="the_id">
+		<!-- 评论数 -->
+		<!-- <view class="cu-bar ui-BG">
+			<view class='action'>
+				<text class='cuIcon-titles text-orange '></text>
+				共{{xw_list.totalComments||0}}条评论
+			</view>
+		</view> -->
+		<!-- 评论内容 -->
+		<!-- <van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
+		<view class="cu-list menu menu-avatar comment solids-top">
+			<view class="cu-item" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item"
+				data-idx="{{idx}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
+				bindtap="focusComment">
+				<view class="cu-avatar round" style="background-image:url({{item.cAvatarUrl}});" data-id="{{item._id}}"
+					data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment"></view>
+				<view class='content'>
+					<view class='text-grey' data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
+						bindtap="focusComment" wx:if="{{item.isVip}}" style="color:red">
+						{{item.cNickName}}
+					</view>
+					<view class='text-grey light' data-id="{{item._id}}" data-name="{{item.cNickName}}"
+						data-openid="{{item.cOpenId}}" bindtap="focusComment" wx:else>
+						{{item.cNickName}}
+					</view>
+					<view class='text-gray text-content text-df'>{{item.comment}}</view>
+					<view class='padding-xs radius  text-sm text-gray'>
+						<view class="bg-gray lighty flex" wx:for="{{item.childComment}}" wx:key="id" wx:for-index="id"
+							wx:for-item="childItem">
+							<view data-id="{{item._id}}" data-name="{{childItem.cNickName}}" data-openid="{{childItem.cOpenId}}"
+								bindtap="focusComment">
+								<view class='text-grey' wx:if="{{childItem.isVip}}" style="color:red">{{childItem.cNickName}}：</view>
+								<view class='text-grey' wx:else>{{childItem.cNickName}}：</view>
+							</view>
+							<view class='flex-sub'>{{childItem.comment}}</view>
+						</view>
+					</view>
+					<view class='flex justify-between'>
+						<view class='text-gray text-df'>{{item.createDate}}</view>
+						<view>
+							<text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+							<text class="text-gray margin-left-xs">{{item.childComment.length}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view> -->
+		<view style="padding:50rpx"></view>
+	</view>
 
 </ui-sys>

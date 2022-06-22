@@ -3,11 +3,11 @@
   <view class="ui-container">
     <!-- <ui-title title="{{title}}" titleColor="text-blue" descUi="text-cyan" desc="{{time}}" tpl="center-column" hasLine/> -->
 
-    <view class="mt-3" wx:if="{{markdown.length > 0}}">
+    <view class="mt-3" wx:if="{{!nodata}}">
       <towxml nodes="{{markdown}}" />
     </view>
     <view class="mt-3" wx:else>
-      <ui-title title="暂无数据" titleColor="text-blue" tpl="center-column" hasLine/>
+      <ui-title title="暂无数据" titleColor="text-blue" tpl="center-column" hasLine />
     </view>
 
   </view>

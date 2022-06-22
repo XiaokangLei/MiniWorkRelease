@@ -11,7 +11,8 @@ Page({
   data: {
     title: "Loading...",
     time: "",
-    markdown: {}
+    markdown: {},
+    nodata: false
   },
 
   /**
@@ -19,13 +20,17 @@ Page({
    */
   onLoad(options) {
     api.GetDataByTitle('mini-markdown', options.mk).then(res => {
-      if(res.data.length > 0){
+      if (res.data.length > 0) {
         this.setData({
           markdown: app.towxml(res.data[0].markdown, 'markdown', {
             theme: wx.getSystemInfoSync().theme
           }),
           title: options.mk,
           time: timeFormat.formatTime(res.data[0]._updateTime)
+        })
+      } else {
+        this.setData({
+          nodata: true
         })
       }
     })

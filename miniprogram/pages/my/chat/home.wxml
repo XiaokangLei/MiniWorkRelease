@@ -1,17 +1,14 @@
 <!--pages/my/chat/chat.wxml-->
-<ui-sys loading="{{false}}" doc title="联系">
+<ui-sys loading="{{false}}" doc title="联系我">
 
   <view class="ui-container">
 
-    <ui-menu ui="mt-5 radius-l text-lg">
+    <ui-menu ui="mt-5 radius-l text-lg mb-5">
       <ui-menu-item title="邮件" icon="cicon-mail text-blue" isAction data-value="lxk201808@163.com" bindtap="tapCopy">
         <text slot="action">lxk201808@163.com <text class="_icon-copy-o text-blue"></text></text>
       </ui-menu-item>
       <ui-menu-item title="QQ" icon="cicon-qq text-purple" isAction data-value="656008660" bindtap="tapCopy">
         <text slot="action">656008660 <text class="_icon-copy-o text-blue"></text></text>
-      </ui-menu-item>
-      <ui-menu-item title="QQ群" icon="cicon-qq text-pink" isAction data-value="465737893" bindtap="tapCopy">
-        <text slot="action">465737893 <text class="_icon-copy-o text-blue"></text></text>
       </ui-menu-item>
       <ui-menu-item title="开源" icon="cicon-github text-orange" isAction data-value="https://github.com/XiaokangLei/MiniWorkRelease.git" bindtap="tapCopy">
         <text slot="action">复制地址 <text class="_icon-copy-o text-blue"></text></text>

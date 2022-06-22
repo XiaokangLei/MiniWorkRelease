@@ -14,7 +14,17 @@ Page({
     id: "",
     sc_show: false,
     dz_show: false,
-    showstar: "true"
+    showstar: "true",
+    placeholder: "",
+    commentContent: "",
+    commentPage: 1,
+    commentList: [],
+    focus: false,
+    commentId: "",
+    isFocus: false,
+    // 用户头像，默认为改图片
+    avatarUrl: "https://s1.ax1x.com/2020/07/28/aAdel6.jpg",
+    nickName: "匿名用户",
   },
 
   /**
@@ -53,6 +63,18 @@ Page({
         dz_show: res.result.statr
       })
     })
+  },
+
+  commentInput: function (e) {
+    this.setData({
+      commentContent: e.detail.value
+    })
+  },
+  // input聚焦时
+  onInputFocus() {
+    this.setData({
+      isFocus: true
+    });
   },
 
   statr_sc(e) {
