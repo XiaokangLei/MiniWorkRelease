@@ -15,21 +15,42 @@
     </view>
   </view>
   <view class='sign-new mb-5'>
-      <view class='new-head'>
-        <!-- 未签到 -->
-        <view wx:if='{{!signed}}' class='sig-qiu sig-qiu-no' bindtap='bindSignFn'>
-          <label class='ti'>签到</label>
-        </view>
-        <!-- 已签到 -->
-        <view wx:else class='sig-qiu sig-qiu-yes'>
-          <label class='ti'>已签到</label>
-        </view>
+    <view class='new-head'>
+      <!-- 未签到 -->
+      <view wx:if='{{!signed}}' class='sig-qiu sig-qiu-no' bindtap='bindSignFn'>
+        <label class='ti'>签到</label>
+      </view>
+      <!-- 已签到 -->
+      <view wx:else class='sig-qiu sig-qiu-yes'>
+        <label class='ti'>已签到</label>
       </view>
     </view>
+  </view>
   <view wx:if="{{showBanner}}" class="cu-item margin-top-xs">
     <view class="content padding-right-sm padding-left-sm">
       <ad binderror="adError" bindclose="adClose" unit-id="{{showBannerId}}"></ad>
     </view>
+  </view>
+
+  <ui-title title="签到排行榜" titleColor="text-blue" tpl="center-column" hasDot />
+  <view class="radius-l ui-BG mx-3 mt-3">
+    <view wx:for="{{rank}}" wx:key="index">
+      <view class="flex-bar m-1">
+        <view class="m-2">
+          <ui-avatar ui="xxl" src="{{item.avatarUrl}}" />
+        </view>
+        <view class="flex-sub ml-1">
+          <text class="text-xl">{{item.nickName}}</text>
+        </view>
+        <view class="flex-sub ml-1 mb-3">
+          <ui-tag bg="bg-red-light" ui="sm" info="{{item.totalSignedCount}} 天" />
+        </view>
+        <view class="flex-sub text-right pr-5">
+          <text class="text-xxl text-orange">{{index + 1}}</text>
+        </view>
+      </view>
+    </view>
+
   </view>
 
 </ui-sys>

@@ -44,17 +44,10 @@
         </view>
       </view>
 
-      <!-- 两个图片 -->
+      <!-- 图片链接 -->
       <view class="ui-grid ui-cols-2">
-        <view class="ui-item" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
+        <view class="ui-item mb-4" wx:for="{{item.subTwo}}" wx:key="index" data-url="{{item.url}}" bindtap="tapToUrl">
           <ui-card ui="shadow my-1 m-3 radius-l" imgHeight="200rpx" img="{{item.img}}" title="" isTag="{{true}}" fixedTitle>
-          </ui-card>
-        </view>
-      </view>
-      <!-- 单个图片 -->
-      <view class="ui-grid ui-cols-2">
-        <view class="ui-item" wx:for="{{item.sub}}" wx:key="index" data-id="{{item.id}}" data-url="{{item.url}}" bindtap="tapToUrl">
-          <ui-card ui="shadow my-1 mx-3 radius-l" imgHeight="200rpx" img="{{item.img}}" title="" isTag="{{true}}" fixedTitle>
           </ui-card>
         </view>
       </view>

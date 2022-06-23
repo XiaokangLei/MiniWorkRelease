@@ -98,6 +98,18 @@ function getPointsDetailList(page, openId) {
     .get()
 }
 
+/**
+ * 获取签到排行
+ * @param {*} page 
+ * @param {*} openId 
+ */
+function getSignTopList() {
+  return db.collection('mini_member')
+    .orderBy('totalSignedCount', 'desc')
+    .limit(10)
+    .get()
+}
+
 function getSignedDetail(openId, year, month) {
   return wx.cloud.callFunction({
     name: 'memberService',
@@ -210,4 +222,5 @@ module.exports = {
   addPoints: addPoints,
   applyVip: applyVip,
   addSignAgain: addSignAgain,
+  getSignTopList: getSignTopList,
 }

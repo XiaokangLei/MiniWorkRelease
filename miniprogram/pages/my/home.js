@@ -11,7 +11,9 @@ Page({
     signed: 0,
     signedRightCount: 0,
     showVIPModal: false,
-    isAdmin: false
+    isAdmin: false,
+    avatarUrl: "https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132",
+    nickName: "微信用户"
   },
 
   /**
@@ -178,7 +180,9 @@ Page({
           vipDesc: Number(memberInfo.level) > 1 ? "VIP用户" : "点击申请VIP",
           isVip: Number(memberInfo.level) > 1,
           applyStatus: memberInfo.applyStatus,
-          signedRightCount: memberInfo.sighRightCount == undefined ? 0 : memberInfo.sighRightCount
+          signedRightCount: memberInfo.sighRightCount == undefined ? 0 : memberInfo.sighRightCount,
+          nickName: memberInfo.nickName,
+          avatarUrl: memberInfo.avatarUrl
         })
       }
     } catch (e) {

@@ -5,7 +5,6 @@ const app = getApp();
 let toSet = []
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -30,9 +29,10 @@ Page({
     },
     showBanner: false,
     showBannerId: "",
-    signedDays: 0,//连续签到天数
+    signedDays: 0, //连续签到天数
     signed: false,
-    signedRightCount:0
+    signedRightCount: 0,
+    rank: []
   },
 
   /**
@@ -46,7 +46,7 @@ Page({
     // let advert = app.globalData.advert
     // let showBanner = false
     // let showBannerId = ''
-    let signedRightCount=options.signedRightCount
+    let signedRightCount = options.signedRightCount
     // if (advert.bannerStatus) {
     //   showBanner = true
     //   showBannerId = advert.bannerId
@@ -57,7 +57,7 @@ Page({
       // showBannerId: showBannerId,
       signedDays: signedDays,
       signed: signed == 1,
-      signedRightCount:signedRightCount
+      signedRightCount: signedRightCount
     })
 
     app.checkUserInfo(function (userInfo, isLogin) {
@@ -81,7 +81,11 @@ Page({
     let year = util.getYear(new Date())
     let month = util.getMonth(new Date())
     let res = await api.getSignedDetail(app.globalData.openid, year.toString(), month.toString())
-    console.info(res)
+    let rank = await api.getSignTopList()
+    console.info(rank)
+    this.setData({
+      rank: rank.data
+    })
     toSet = [];
     res.result.forEach(function (item) {
       let set = {
@@ -116,17 +120,15 @@ Page({
 
     this.calendar.setSelectedDays(toSet);
   },
-    /**
+  /**
    * 日期点击事件（此事件会完全接管点击事件），需自定义配置 takeoverTap 值为真才能生效
    * currentSelect 当前点击的日期
    */
   onTapDay(e) {
-    let that=this
+    let that = this
     console.log('onTapDay', e.detail); // => { year: 2019, month: 12, day: 3, ...}
-    if(e.detail.choosed)
-    {
-      if(Number(that.data.signedRightCount)<=0)
-      {
+    if (e.detail.choosed) {
+      if (Number(that.data.signedRightCount) <= 0) {
         return;
       }
 
@@ -136,14 +138,13 @@ Page({
         day: e.detail.day.toString()
       }
 
-      if(JSON.stringify(toSet).indexOf(JSON.stringify(set))!==-1)
-      {
+      if (JSON.stringify(toSet).indexOf(JSON.stringify(set)) !== -1) {
         return;
       }
 
       wx.showModal({
         title: '提示',
-        content: '您有'+that.data.signedRightCount+'次补签，是否进行补签？',
+        content: '您有' + that.data.signedRightCount + '次补签，是否进行补签？',
         success(res) {
           if (res.confirm) {
             wx.showLoading({
@@ -154,16 +155,16 @@ Page({
               openId: app.globalData.openid,
               nickName: app.globalData.userInfo.nickName,
               avatarUrl: app.globalData.userInfo.avatarUrl,
-              year:e.detail.year,
-              month:e.detail.month,
-              day:e.detail.day
+              year: e.detail.year,
+              month: e.detail.month,
+              day: e.detail.day
             }
             api.addSignAgain(info).then((res) => {
               console.info(res)
               if (res.result) {
                 that.setData({
                   signedDays: Number(that.data.signedDays) + 1,
-                  signedRightCount:Number(that.data.signedRightCount) - 1,
+                  signedRightCount: Number(that.data.signedRightCount) - 1,
                 })
 
                 toSet.push(set)
@@ -174,8 +175,7 @@ Page({
                   icon: "none",
                   duration: 3000
                 });
-              }
-              else {
+              } else {
                 wx.showToast({
                   title: "程序有些小异常",
                   icon: "none",
@@ -220,8 +220,8 @@ Page({
   },
 
   /**
-* 获取订阅消息
-*/
+   * 获取订阅消息
+   */
   submitSign: async function (accept, templateId, that) {
     try {
       wx.showLoading({
@@ -246,8 +246,7 @@ Page({
         icon: 'success',
         duration: 1500
       })
-    }
-    catch (err) {
+    } catch (err) {
       wx.showToast({
         title: '程序有一点点小异常，操作失败啦',
         icon: 'none',
