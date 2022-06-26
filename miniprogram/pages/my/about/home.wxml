@@ -3,7 +3,7 @@
   <view class="ui-container">
 
     <view class="text-center mt-2">
-      <ui-avatar ui="round xl" src="/static/logo.png" />
+      <ui-avatar ui="round xl" src="/static/logo.jpg" />
       <view class="text-bold text-xl" style="margin-top: 32rpx;">
         <text>小贝校招</text>
       </view>

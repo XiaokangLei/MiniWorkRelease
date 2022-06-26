@@ -19,7 +19,7 @@
     </view>
   </ui-navbar>
   <!-- 内推TOP信息 -->
-  <view class="page-card-box" style="margin-top: {{sys_navBar+0.1*sys_capsule.height}}px;">
+  <view class="page-card-box" style="margin-top: {{sys_navBar}}px;">
     <view class="bg-blue-gradient shadow-blur page-card-view">
       <view class="left-view">
         <view class="text-bold text-xl">校招/社招内推</view>
@@ -37,7 +37,6 @@
     <ui-title title="热门内推" depth="2" isIcon ui="ml-3" />
     <view class="ui-cards goods col-goods">
       <view class="ui-item shadow radius-l" wx:for="{{list}}" wx:key="index" data-info="{{item.each}}" data-logo="{{item.logo}}" data-company="{{item.name}}" data-comment="{{item.comment}}" bindtap="toProductDetail">
-        <!-- <image src="{{item.cover}}" lazy-load="true" class="image" mode="aspectFill" /> -->
         <ui-img ui="radius" src="{{item.cover}}" height="320rpx" current="{{index}}" />
         <view class="content">
           <view class="flex-bar">

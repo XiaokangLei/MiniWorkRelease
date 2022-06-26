@@ -105,6 +105,9 @@ function getPointsDetailList(page, openId) {
  */
 function getSignTopList() {
   return db.collection('mini_member')
+    .where({
+      totalSignedCount: _.gt(0)
+    })
     .orderBy('totalSignedCount', 'desc')
     .limit(10)
     .get()

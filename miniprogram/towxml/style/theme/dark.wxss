@@ -1,7 +1,7 @@
 /*正文样式*/
 .h2w-dark {
   color:#ddd;
-  background-color:#000;
+  background-color:#333333;
 }
 
 /**标题**/
@@ -16,11 +16,11 @@
     background-color:#1f1f1f;
 }
 .h2w-dark .h2w__table .h2w__tr:nth-child(2n){
-    background-color:#090909;
+    background-color:#333333;
 }
 .h2w-dark .h2w__th,
 .h2w-dark .h2w__td {
-    border-color:#333;
+    border-color:#999999;
 }
 
 

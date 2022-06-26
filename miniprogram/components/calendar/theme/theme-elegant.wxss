@@ -12,7 +12,7 @@
 
 .elegant_choosed {
     color: #000;
-    background-color: #e2e2e2;
+    background-color: #b2daff;
 }
 
 .elegant_date-disable {

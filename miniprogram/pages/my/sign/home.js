@@ -32,7 +32,8 @@ Page({
     signedDays: 0, //连续签到天数
     signed: false,
     signedRightCount: 0,
-    rank: []
+    rank: [],
+    loading: true
   },
 
   /**
@@ -51,13 +52,16 @@ Page({
     //   showBanner = true
     //   showBannerId = advert.bannerId
     // }
+    let rank = api.getSignTopList()
 
     that.setData({
       // showBanner: showBanner,
       // showBannerId: showBannerId,
       signedDays: signedDays,
       signed: signed == 1,
-      signedRightCount: signedRightCount
+      signedRightCount: signedRightCount,
+      rank: rank.data,
+      loading: false
     })
 
     app.checkUserInfo(function (userInfo, isLogin) {
@@ -82,7 +86,6 @@ Page({
     let month = util.getMonth(new Date())
     let res = await api.getSignedDetail(app.globalData.openid, year.toString(), month.toString())
     let rank = await api.getSignTopList()
-    console.info(rank)
     this.setData({
       rank: rank.data
     })
