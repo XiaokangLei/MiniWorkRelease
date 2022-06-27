@@ -10,8 +10,8 @@
 }
 
 .h2w__main {
-    margin: 0 40rpx 40rpx 40rpx;
-    padding-top: 40rpx;
+    margin: 0 10rpx 10rpx 10rpx;
+    padding-top: 10rpx;
 }
 
 /**标题**/

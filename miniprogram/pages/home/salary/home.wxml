@@ -2,7 +2,7 @@
 <ui-sys doc title="薪资PK">
   <view class="ui-container">
     <!-- 提示 -->
-    <view class="ui-BG radius p-3 m-4 shadow-sm">
+    <view class="ui-BG radius p-3 my-2 shadow-sm">
       <view class="_icon-info text-yellow">薪资信息从各网站获取，仅供参考。</view>
     </view>
     <!-- 内容 -->
@@ -10,7 +10,7 @@
       <view class="ui-item p-3" wx:for="{{salary}}" wx:key="index">
         <view class="bg-{{item.color}}-gradient shadow test-doc-card" data-mk='{{item.title}}' bindtap="toMarkdown">
           <view class="content">
-            <view class="text-bold text-lg title">{{item.title}}</view>
+            <view class="text-bold text-xl title">{{item.title}}</view>
             <view class="text-sm name _icon-loading"> {{item.time}}</view>
           </view>
         </view>

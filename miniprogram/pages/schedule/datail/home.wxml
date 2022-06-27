@@ -71,52 +71,44 @@
   </view>
 
   <!-- 列表 -->
-  <!-- <view class="mt-2 ui-BG" id="the_id">
-		<view class="cu-bar ui-BG">
-			<view class='action'>
-				<text class='cuIcon-titles text-orange '></text>
-				共{{xw_list.totalComments||0}}条评论
-			</view>
-		</view>
-		<van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
-		<view class="cu-list menu menu-avatar comment solids-top">
-			<view class="cu-item" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item"
-				data-idx="{{idx}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
-				bindtap="focusComment">
-				<view class="cu-avatar round" style="background-image:url({{item.cAvatarUrl}});" data-id="{{item._id}}"
-					data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment"></view>
-				<view class='content'>
-					<view class='text-grey' data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
-						bindtap="focusComment" wx:if="{{item.isVip}}" style="color:red">
-						{{item.cNickName}}
-					</view>
-					<view class='text-grey light' data-id="{{item._id}}" data-name="{{item.cNickName}}"
-						data-openid="{{item.cOpenId}}" bindtap="focusComment" wx:else>
-						{{item.cNickName}}
-					</view>
-					<view class='text-gray text-content text-df'>{{item.comment}}</view>
-					<view class='padding-xs radius  text-sm text-gray'>
-						<view class="bg-gray lighty flex" wx:for="{{item.childComment}}" wx:key="id" wx:for-index="id"
-							wx:for-item="childItem">
-							<view data-id="{{item._id}}" data-name="{{childItem.cNickName}}" data-openid="{{childItem.cOpenId}}"
-								bindtap="focusComment">
-								<view class='text-grey' wx:if="{{childItem.isVip}}" style="color:red">{{childItem.cNickName}}：</view>
-								<view class='text-grey' wx:else>{{childItem.cNickName}}：</view>
-							</view>
-							<view class='flex-sub'>{{childItem.comment}}</view>
-						</view>
-					</view>
-					<view class='flex justify-between'>
-						<view class='text-gray text-df'>{{item.createDate}}</view>
-						<view>
-							<text class="cuIcon-messagefill text-gray margin-left-sm"></text>
-							<text class="text-gray margin-left-xs">{{item.childComment.length}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view style="padding:50rpx"></view>
-	</view> -->
+  <view class="ui-BG" id="the_id">
+    <view class="cu-bar ui-BG pl-2">
+      <ui-title title="共{{xw_list.totalComments||0}}条评论" depth="3">
+        <text slot="icon" class="text-blue _icon-titles" />
+      </ui-title>
+    </view>
+    <van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
+    <view class="cu-list menu menu-avatar comment solids-top">
+      <view class="cu-item" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment">
+        <view class="cu-avatar round" style="background-image:url({{item.cAvatarUrl}});" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment"></view>
+        <view class='content'>
+          <view class='text-grey' data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment" wx:if="{{item.isVip}}" style="color:red">
+            {{item.cNickName}}
+          </view>
+          <view class='text-grey light' data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment" wx:else>
+            {{item.cNickName}}
+          </view>
+          <view class='text-gray text-content text-df'>{{item.comment}}</view>
+          <view class='padding-xs radius  text-sm text-gray'>
+            <view class="bg-gray lighty flex" wx:for="{{item.childComment}}" wx:key="id" wx:for-index="id" wx:for-item="childItem">
+              <view data-id="{{item._id}}" data-name="{{childItem.cNickName}}" data-openid="{{childItem.cOpenId}}" bindtap="focusComment">
+                <view class='text-grey' wx:if="{{childItem.isVip}}" style="color:red">{{childItem.cNickName}}：</view>
+                <view class='text-grey' wx:else>{{childItem.cNickName}}：</view>
+              </view>
+              <view class='flex-sub'>{{childItem.comment}}</view>
+            </view>
+          </view>
+          <view class='flex justify-between'>
+            <view class='text-gray text-df'>{{item.createDate}}</view>
+            <view>
+              <text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+              <text class="text-gray margin-left-xs">{{item.childComment.length}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style="padding:50rpx"></view>
+  </view>
 
 </ui-sys>
